@@ -5,25 +5,25 @@
   
 	--divider-bg: rgba(0, 0, 0, 0.08);
   
-	--dark: #202124;
+	--dark: #2d2e31;
 	--popover-colour: #2f3032;
-	--field: #2a2c2f;
+	--field: #26272a;
 
 	--item-hover-bg: #3d4043;
 	--item-select-bg: #94b5f6;
 	--item-hover-select-bg: #9abbfd;
 
-	--ui-icon-colour: white;
+	--ui-icon-colour: #999999;
 
 	--field-radius: 10px;
 	--serperator: rgba(0, 0, 0, 0);
-	--link-colour: #fff;
+	--link-colour: #999999;
 	--link-hover-colour: #fff;
 	--detail-colour: #999999;
 
 
 
-	--folder-padding: 8px;
+	--folder-padding: 10px;
 
 	--text-colour: #fff;
 	--yellow: #f4a60e;
@@ -69,8 +69,31 @@ ul {
 }
 
 hr {
-	border-style: ridge;
+	/* border-style: ridge; */
     margin: 0.2em 0;
+}
+
+/* #icon-calendar-content-buttons > button {
+	all: unset;
+} */
+
+#search-set > span {
+	background-color: var(--field) !important;
+}
+
+.fa {
+	color: var(--detail-colour);
+}
+
+.fa-search {
+	padding-left: 5px;
+}
+
+.fa-gear,
+.fa-chevron-down,
+.fa-plus,
+.fa-minus {
+	color: var(--ui-icon-colour);
 }
 
 .fa-caret-down:before {
@@ -389,7 +412,7 @@ a > span {
 
 #explore-panel a {
 	text-decoration: none;
-	color: var(--link-colour);
+	/* color: var(--link-colour); */
 	/* font-weight: bold; */
 }
 #explore-panel .explore-hierarchy a:hover {
@@ -435,8 +458,8 @@ a > span {
 
 .menu li:not(.menu-item-disabled):hover,
 .menu li:not(.menu-item-disabled):hover {
-	background-color: rgba(231, 233, 236, 0.5);
-    border-color: rgba(225, 227, 230, 0.5);
+	background-color: green;
+    border-color: green;
 }
 
 /* TODO */
@@ -754,19 +777,20 @@ a > span {
 	color: var(--ui-icon-colour);
 	transition: border-color 0.15s ease-in-out,
 		background-color 0.15s ease-in-out;
+	box-shadow: none;
 }
 .option-icon {
 	width: 14px;
     height: 14px;
 }
 
-#action-menu-toolset .option-icon {
+/* #action-menu-toolset .option-icon {
 	background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 #icon-calendar-content-buttons button:hover, 
 .option-icon.pressed {
-	background-color: #d9e2bb;
+	background-color: var(--item-select-bg);
 }
 
 #icon-calendar-content > div > div {
@@ -823,7 +847,6 @@ a > span {
 .arrow {
 	display: none;
 	border-color: transparent transparent green !important;
-	color: rgba(red, green, blue, alpha);
 }
 
 .tool-item > .fa {
@@ -862,22 +885,22 @@ a > span {
 } */
 
 .fa-explore-movable {
-	color: #212529 !important;
+	color: var(--link-colour) !important;
 }
 
-.fa-sort-title {
+/* .fa-sort-title {
 	color: #11ad11 !important;
-}
+} */
 
-.tool-item {
+/* .tool-item {
 	border-left: 1px solid transparent !important;
 	border-right: 1px solid transparent !important;
-}
-.tool-item:hover {
+} */
+/* .tool-item:hover {
 	background-color: rgba(231, 233, 236, 0.5) !important;
 	border-left: 1px solid rgba(225, 227, 230, 0.5) !important;
 	border-right: 1px solid rgba(225, 227, 230, 0.5) !important;
-}
+} */
 .tool-item:first-child:hover {
 	border-top-left-radius: 3px !important;
     border-bottom-left-radius: 3px !important;
@@ -890,9 +913,9 @@ a > span {
 	background-color: rgba(231, 233, 236, 0.5) !important;
 }
 
-.fa-sort-url {
-	color: #e61c1c !important;
-}
+/* .fa-sort-url {
+	color: green !important;
+} */
 
 .icon-toolbar {
 	display: inline-block;
