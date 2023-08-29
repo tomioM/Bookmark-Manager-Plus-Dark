@@ -1,39 +1,40 @@
 * {
-	--headline-color: rgba(0, 0, 0, 0.65);
-	--subtitle-color: rgba(0, 0, 0, 0.9);
-	--body-color: rgba(0, 0, 0, 0.9);
-  
-	--divider-bg: rgba(0, 0, 0, 0.08);
-  
-	--dark: #2d2e31;
-	--popover-colour: #2f3032;
+	--text-colour: #fff;
+	--background-colour: #2d2e31;
+	--popover-colour: #363739;
 	--field: #26272a;
 
 	--item-hover-bg: #3d4043;
 	--item-select-bg: #94b5f6;
 	--item-hover-select-bg: #9abbfd;
 
+
+	--link-colour: #cecece;
+	--link-hover-colour: #9abbfd;
+
+	--detail-colour: #999999;
 	--ui-icon-colour: #999999;
 
 	--field-radius: 10px;
 	--serperator: rgba(0, 0, 0, 0);
-	--link-colour: #999999;
-	--link-hover-colour: #fff;
-	--detail-colour: #999999;
-
-
-
 	--folder-padding: 10px;
+}
 
-	--text-colour: #fff;
-	--yellow: #f4a60e;
-	--trinidad: #d74c2e;
-	--pastel: #6ad37c;
-	--naval: #4277d7;
-	--orchid: #993fd6;
-	--gold: linear-gradient(#FFCE7A, #BA851E);
-  
-  }
+hr {
+	/* border: 1px; */
+	border-color: var(--detail-colour);
+}
+
+button {
+	box-shadow: none;
+	border: none;
+}
+
+input {
+	color: var(--text-colour);
+	box-shadow: none;
+	border: none;
+}
 
 a {
 	color: var(--link-colour);
@@ -51,7 +52,7 @@ body {
 	word-wrap: break-word;
 	user-select: none;
 	color: var(--text-colour) !important;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 body.extend {
@@ -129,14 +130,14 @@ hr {
 #result-list li.ui-selected-fix a,
 #result-list li.ui-selecting a {
 	/* border-color: #e3edf5; */
-	color: var(--dark);
+	color: var(--background-colour);
 }
 
 #result-list li.drop-selected a {
 	background-color: var(--item-select-bg);
 	/* border-color: #e3edf5; */
 	/* outline: red solid 1px; */
-	color: var(--dark);
+	color: var(--background-colour);
 }
 
 #result-list li.group.list-hover,
@@ -254,7 +255,7 @@ hr {
 	cursor: default;
 	border: solid 1px var(--serperator);
 	position: absolute;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	max-height: 270px;
 	overflow: auto;
 	z-index: 15;
@@ -266,7 +267,7 @@ hr {
 	cursor: default;
 	border: solid 1px var(--serperator);
 	position: fixed;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	margin: 0 5px 0 0;	/* margin between box and right side */
 	max-height: 300px;
 	min-width: 50px;
@@ -339,7 +340,7 @@ a > span {
 
 #option-panel {
 	position: absolute;
-    background-color: var(--dark);
+    background-color: var(--background-colour);
     /* background-color: #f2f0e8; */
     /* box-shadow: 2px 3px 5px grey; */
     /* margin-right: 25px; */
@@ -441,7 +442,7 @@ a > span {
 	position: absolute;
 	min-width: 100px;
 	padding: 3px;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	border: 1px solid var(--serperator);
 	/* box-shadow: 2px 3px 5px grey; */
 	white-space: nowrap;
@@ -481,7 +482,7 @@ a > span {
 	width: 90%;
 	max-width: 450px;
 	padding: 10px;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	border: 1px solid var(--serperator);
 	/* box-shadow: 2px 3px 5px grey; */
 	z-index: 20;
@@ -540,7 +541,7 @@ a > span {
 	transform: translate(-50%, -50%);
 	width: 22em;
 	padding: 10px;
-	background-color: var(--dark);
+	background-color: var(--background-colour);
 	border: 1px solid var(--serperator);
 	/* box-shadow: 2px 3px 5px grey; */
 	z-index: 20;
@@ -609,7 +610,7 @@ a > span {
 	display: inline-block;
 	position: absolute;
 	vertical-align: top;
-	background-color: var(--dark);	
+	background-color: var(--background-colour);	
 }
 
 #left-frame {
@@ -633,15 +634,15 @@ a > span {
 	left: 289px;
 	/* margin: 5px 0; */
 	height: 590px;
-    width: 4px;
-	background: red;
+    width: 3px;
+	background: var(--item-select-bg);
     vertical-align: top;
 	z-index: 5;
 	/* background: #dedede; */
 }
 #separator:hover {
 	cursor: w-resize;
-	background: #b5b5b5;
+	background: var(--item-select-bg);
 }
 #containment {
 	display: inline-block;
@@ -671,11 +672,11 @@ a > span {
 
 .view-active {
 	transition: all 0.3s linear;
-	background-color: #ddf5d4;
+	background-color: var(--item-select-bg);
 }
 .view-active-not-possiable {
 	transition: all 0.3s linear;
-	background-color: #efd6d6;
+	/* background-color: #efd6d6; */
 }
 
 #left-frame #result-panel .help-view {
@@ -692,7 +693,7 @@ a > span {
 	margin-top: 5px;
 }
 .root-folder a:hover {
-	color: red;
+	color: var(--item-select-bg);
 }
 
 .empty {
