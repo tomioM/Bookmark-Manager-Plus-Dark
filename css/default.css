@@ -175,7 +175,9 @@ hr {
 	/* border-color: rgba(225, 227, 230, 0.5); */
 }
  
- 
+#result-panel::-webkit-scrollbar {
+	display: none;
+  }
  
 #result-panel::-webkit-scrollbar-track {
 	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
