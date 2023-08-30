@@ -331,11 +331,11 @@ $(document).ready(function() {
 		
 		// search
 		bmp.options.search = items.search;
-		$('#icon-search-mode').removeClass('fa-basic fa-lg fa-search-normal fa-circle-thin fa-question-circle-o fa-registered');
+		$('#icon-search-mode').removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
 		if(items.search == "normal") {
-			$('#icon-search-mode').addClass('fa-lg fa-circle-thin fa-search-normal');
+			$('#icon-search-mode').addClass('fa-circle-thin');
 		} else if(items.search == "wildcard") {
-			$('#icon-search-mode').addClass('fa-lg fa-question-circle-o');
+			$('#icon-search-mode').addClass('fa-question-circle-o');
 		} else {
 			$('#icon-search-mode').addClass('fa-basic fa-registered');
 		}
@@ -721,8 +721,8 @@ function init() {
 			
 			// search
 			bmp.options.search = DEFAULT_ICON_SEARCH_MODE;
-			$('#icon-search-mode').removeClass('fa-basic fa-lg fa-search-normal fa-circle-thin fa-question-circle-o fa-registered');
-			$('#icon-search-mode').addClass('fa-lg fa-circle-thin fa-search-normal');
+			$('#icon-search-mode').removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
+			$('#icon-search-mode').addClass('fa-circle-thin');
 			
 			// page
 			bmp.options.page = true;
@@ -3091,12 +3091,12 @@ function createIconToolbars() {
 		position: "bottom",
 	}).on("toolbarItemClick", function(e, item) {
 		
-		$(this).removeClass('fa-basic fa-lg fa-search-normal fa-circle-thin fa-question-circle-o fa-registered');
+		$(this).removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
 		if($(item).hasClass('search-mode-normal')) {
-			$(this).addClass('fa-lg fa-circle-thin fa-search-normal');
+			$(this).addClass('fa-circle-thin');
 			bmp.options.search = "normal";
 		} else if($(item).hasClass('search-mode-wildcard')) {
-			$(this).addClass('fa-lg fa-question-circle-o');
+			$(this).addClass('fa-question-circle-o');
 			bmp.options.search = "wildcard";
 		} else {
 			$(this).addClass('fa-basic fa-registered');
