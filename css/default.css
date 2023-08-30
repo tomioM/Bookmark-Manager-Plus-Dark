@@ -18,6 +18,7 @@
 	--field-radius: 10px;
 	--serperator: rgba(0, 0, 0, 0);
 	--folder-padding: 12px;
+	--popover-shadow: rgba(0, 0, 0, .15) 0px 1px 4px;
 }
 
 hr {
@@ -486,9 +487,10 @@ a > span {
 	width: 90%;
 	max-width: 450px;
 	padding: 10px;
-	background-color: var(--background-colour);
-	border: 1px solid var(--serperator);
-	/* box-shadow: 2px 3px 5px grey; */
+	background-color: var(--popover-colour);
+	/* border: 1px solid var(--serperator); */
+	border-radius: var(--field-radius);
+	box-shadow: var(--popover-shadow);
 	z-index: 20;
 }
 
@@ -545,9 +547,10 @@ a > span {
 	transform: translate(-50%, -50%);
 	width: 22em;
 	padding: 10px;
-	background-color: var(--background-colour);
+	background-color: var(--popover-colour);
 	border: 1px solid var(--serperator);
-	/* box-shadow: 2px 3px 5px grey; */
+	border-radius: var(--field-radius);
+	box-shadow: var(--popover-shadow);
 	z-index: 20;
 	user-select: auto;		/* allow for windows to be selectable */
 }
@@ -639,7 +642,7 @@ a > span {
 	/* margin: 5px 0; */
 	height: 590px;
     width: 3px;
-	background: var(--item-select-bg);
+	background: var(--field);
     vertical-align: top;
 	z-index: 5;
 	/* background: #dedede; */
@@ -719,6 +722,8 @@ a > span {
 .menu {
 	display: inline-block;
 	float: left;
+	border-radius: var(--field-radius);
+	box-shadow: var(--popover-shadow);
 }
 
 .arrowclick {
@@ -846,7 +851,7 @@ a > span {
 .tool-container {
 	background-color: var(--popover-colour) !important;
 	/* border: 2px solid green !important; */
-	/* box-shadow: 2px 3px 5px grey !important; */
+	box-shadow: var(--popover-shadow);
 	cursor: default;
 }
 
