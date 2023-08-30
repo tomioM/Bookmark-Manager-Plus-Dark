@@ -48,7 +48,8 @@ input {
 }
 
 body {
-	width: 490px;	/* 5 + 390 + 5 == 400 */
+	/* FWIDTH */
+	width: 420px;	/* 5 + 390 + 5 == 400 */
 	height: 590px;
 	margin: 5px;
 	word-wrap: break-word;
@@ -80,8 +81,54 @@ hr {
 	all: unset;
 } */
 
+element.style
+
+#icon-calendar-content-buttons > button, #search-set > span {
+	padding-top: 5px;
+	padding-bottom: 6px !important;
+}
+
+.switch.switch-round.switch-on {
+	background-color: rgb(191, 208, 246, 0.6);
+}
+
+
+.switch.switch-round {
+	border-color: var(--popover-colour);
+	-webkit-box-shadow: inset 0px 0px 0px 1.5px var(--popover-colour); 
+	box-shadow: inset 0px 0px 0px 1.5px var(--popover-colour);
+	background-color: var(--detail-colour);
+}
+
+.switch.switch-round.switch-on .switch-toggle {
+	left: 52%;
+    background: var(--item-select-bg);
+	border-color: var(--item-select-bg);
+
+
+}
+
+.switch.switch-round.switch-off .switch-toggle {
+	left: 0%;
+	background-color: var(--link-colour);
+	border-color: var(--link-colour);
+}
+
+.switch.switch-round .switch-toggle {
+	box-shadow: none;
+	/* border: none; */
+}
+
+a.option {
+	margin-top: 3.1px;
+}#header-panel
+
 #search-set > span {
 	background-color: var(--field) !important;
+}
+
+.fa-file-none, .fa-folder-none {
+	color: var(--detail-colour) !important;
 }
 
 .fa {
@@ -256,10 +303,12 @@ hr {
 }
 
 #search-history {
+	margin-top: 6px;
 	cursor: default;
 	border: solid 1px var(--serperator);
 	position: absolute;
-	background-color: var(--background-colour);
+	background-color: var(--popover-colour);
+	border-radius: var(--field-radius);
 	max-height: 270px;
 	overflow: auto;
 	z-index: 15;
@@ -324,10 +373,11 @@ a > span {
 #result-panel a > div > span {
   padding-left: var(--folder-padding);
 }
+/* Edit item spacing */
 #result-panel ul a {
 	display: block;
 	overflow: hidden;
-	padding: 0.2em 0.6em;
+	padding: 0.22em 0.6em;
 	box-sizing: border-box;
 	text-decoration: none;
 	/* color: #15C; */
@@ -632,16 +682,16 @@ a > span {
 	height: 590px;
 	left: 5px;
 	/* Don't know how to change this yet; will have to untangle init.js to figure out */
-    width: 282px; 
+    width: 282px;  /* init 282. must add up to 790. Separator = 3px  */
     height: 590px;
 }
 #right-frame {
 	/* left: 260px; */
 	height: 590px;
 	right: 5px;
-	/* FWIDTH, Also update 633, 641 in init.js*/
+	/* FWIDTH, Also update 633, 641 in init.js; init 390*/
 	/* TODO: Tie this to one variable, preferably configured via dragging or ui accessible variable */
-    width: 490px;
+    width: 420px;
 	/* z-index: 1; */
 }
 
@@ -677,14 +727,15 @@ a > span {
 
 #header-panel {
 	position: relative;
-	height: 22px;
+	height: 27px;
 	border-bottom: 1px solid var(--serperator);
-	padding: 2px 2px 0px 2px;
+	padding: 2px 2px 5px 2px; /* 2px 2px 0px 2px */
 	white-space: nowrap;
 }
 
 #view-type {
 	width: 100%;
+	color: var(--detail-colour);
 }
 
 
@@ -701,6 +752,7 @@ a > span {
 	text-decoration: none;
 	padding: 5px;
 	font-size: 14px;
+	color: var(--detail-colour);
 }
 
 #left-frame #result-panel .help-view a {
@@ -749,17 +801,11 @@ a > span {
 
 
 #search-set {
-	/* border: solid var(--serperator); */
-    /* border-width: 0 0 1px; */
-    /* display: flex; */
-    
-    /* height: 22px; */
-    /* margin-bottom: 3px; */
-	
-	
+	margin-top: 5px;
 	display: block;
 	/* position: relative; */
 }
+
 #search-set #search-editor {
 	border: 0;
     color: var(--text-colour);
@@ -786,10 +832,12 @@ a > span {
 	background-color: var(--field-focus);
 }
 
+/*  Calendar Buttons */
 #icon-calendar-content-buttons > button,
 #search-set > span,
 .option-icon {
-    padding: 2px;
+	/* Toolbar button padding */
+    padding: 6px 5px 4px 5px;
     text-align: center;
 	vertical-align: bottom;
     /* border: 1px solid; */
@@ -872,7 +920,7 @@ a > span {
 }
 
 .tool-item > .fa {
-	color: var(--item-select-bg);
+	color: var(--link-colour);
 }
 
 

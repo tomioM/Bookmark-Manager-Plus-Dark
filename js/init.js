@@ -630,7 +630,7 @@ function init() {
 			
 			// FWIDTH, See633 in default css
 			var width = $rightFrame.css('width');
-			$rightFrame.css('width', 490);
+			$rightFrame.css('width', 420);
 			updateExploreHierarchyMaxWidth('#right-frame');
 			$rightFrame.css('width', width);
 			
@@ -638,7 +638,7 @@ function init() {
 			updateResultPanelHeight('#right-frame');
 			
 			$rightFrame.animate({
-				width: 490,
+				width: 420,
 			}, 350,  "easeOutCubic", function() {
 				updateSearchEditorWidth();
 				
