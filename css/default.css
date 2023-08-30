@@ -956,13 +956,6 @@ a > span {
 	/* z-index: 10000; */
 }
 
-/* .fa-file-none,
-.fa-folder-none,
-.fa-calendar-none,
-.fa-search-normal {
-	color: #bbb !important;
-} */
-
 .fa-explore-movable {
 	color: var(--link-colour) !important;
 }

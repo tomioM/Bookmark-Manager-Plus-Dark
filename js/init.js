@@ -331,13 +331,13 @@ $(document).ready(function() {
 		
 		// search
 		bmp.options.search = items.search;
-		$('#icon-search-mode').removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
+		$('#icon-search-mode').removeClass('fa-basic fa-circle fa-question-circle fa-asterisk');
 		if(items.search == "normal") {
-			$('#icon-search-mode').addClass('fa-circle-thin');
+			$('#icon-search-mode').addClass('fa-circle');
 		} else if(items.search == "wildcard") {
-			$('#icon-search-mode').addClass('fa-question-circle-o');
+			$('#icon-search-mode').addClass('fa-question-circle');
 		} else {
-			$('#icon-search-mode').addClass('fa-basic fa-registered');
+			$('#icon-search-mode').addClass('fa-basic fa-asterisk');
 		}
 		
 		// page
@@ -721,8 +721,8 @@ function init() {
 			
 			// search
 			bmp.options.search = DEFAULT_ICON_SEARCH_MODE;
-			$('#icon-search-mode').removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
-			$('#icon-search-mode').addClass('fa-circle-thin');
+			$('#icon-search-mode').removeClass('fa-basic fa-circle fa-question-circle fa-asterisk');
+			$('#icon-search-mode').addClass('fa-circle');
 			
 			// page
 			bmp.options.page = true;
@@ -3091,15 +3091,15 @@ function createIconToolbars() {
 		position: "bottom",
 	}).on("toolbarItemClick", function(e, item) {
 		
-		$(this).removeClass('fa-basic fa-circle-thin fa-question-circle-o fa-registered');
+		$(this).removeClass('fa-basic fa-circle fa-question-circle fa-asterisk');
 		if($(item).hasClass('search-mode-normal')) {
-			$(this).addClass('fa-circle-thin');
+			$(this).addClass('fa-circle');
 			bmp.options.search = "normal";
 		} else if($(item).hasClass('search-mode-wildcard')) {
-			$(this).addClass('fa-question-circle-o');
+			$(this).addClass('fa-question-circle');
 			bmp.options.search = "wildcard";
 		} else {
-			$(this).addClass('fa-basic fa-registered');
+			$(this).addClass('fa-basic fa-asterisk');
 			bmp.options.search = "regex";
 		}
 		
