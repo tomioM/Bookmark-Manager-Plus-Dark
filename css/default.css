@@ -271,9 +271,11 @@ hr {
 	cursor: default;
 	border: solid 1px var(--serperator);
 	position: fixed;
-	background-color: var(--background-colour);
+	box-shadow: var(--popover-shadow);
+	border-radius: var(--field-radius);
+	background-color: var(--popover-colour);
 	margin: 0 5px 0 0;	/* margin between box and right side */
-	max-height: 300px;
+	/* max-height: 300px; */
 	min-width: 50px;
 	max-width: 250px;
 	overflow: auto;
@@ -281,10 +283,11 @@ hr {
 	z-index: 10;
 }
 
+/* TODO: Reference the padding here */
 #search-history li,
 #explore-sibling li,
 #explore-history li {
-	padding: 1px 4px;
+	padding: 4px 7px;
 	overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -292,13 +295,18 @@ hr {
 #search-history li:hover,
 #explore-sibling li:hover,
 #explore-history li:hover {
-	background-color: #487dcc;
-	color: white;
+	background-color: var(--item-hover-bg);
+	color: var(--text-colour);
 }
 
 .explore-sibling-top {
-	background-color: #c8d5e8;
-	color: white !important;
+	background-color: var(--item-select-bg);
+	color: var(--background-colour) !important;
+}
+
+.explore-sibling-top:hover {
+	background-color: var(--item-hover-select-bg) !important;
+	color: var(--background-colour) !important;
 }
 
 .datepicker {
