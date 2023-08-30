@@ -48,7 +48,7 @@ input {
 }
 
 body {
-	width: 390px;	/* 5 + 390 + 5 == 400 */
+	width: 490px;	/* 5 + 390 + 5 == 400 */
 	height: 590px;
 	margin: 5px;
 	word-wrap: break-word;
@@ -630,7 +630,9 @@ a > span {
 	/* left: 260px; */
 	height: 590px;
 	right: 5px;
-    width: 390px;
+	/* FWIDTH, Also update 633, 641 in init.js*/
+	/* TODO: Tie this to one variable, preferably configured via dragging or ui accessible variable */
+    width: 490px;
 	/* z-index: 1; */
 }
 

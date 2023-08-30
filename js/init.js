@@ -628,8 +628,9 @@ function init() {
 			$leftFrame.hide();
 			$('#separator').hide();
 			
+			// FWIDTH, See633 in default css
 			var width = $rightFrame.css('width');
-			$rightFrame.css('width', 390);
+			$rightFrame.css('width', 490);
 			updateExploreHierarchyMaxWidth('#right-frame');
 			$rightFrame.css('width', width);
 			
@@ -637,7 +638,7 @@ function init() {
 			updateResultPanelHeight('#right-frame');
 			
 			$rightFrame.animate({
-				width: 390,
+				width: 490,
 			}, 350,  "easeOutCubic", function() {
 				updateSearchEditorWidth();
 				
