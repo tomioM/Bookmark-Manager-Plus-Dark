@@ -46,15 +46,13 @@ input {
 	color: var(--text-colour);
 	box-shadow: none;
 	border: none;
+	background-color: var(--field);
+	border-radius: var(--field-radius);
+	padding: 6px 1em 6px 1em;
 }
 
 a {
 	color: var(--link-colour);
-}
-
-input {
-	background-color: var(--field);
-
 }
 
 body {
@@ -565,7 +563,7 @@ a > span {
 #result-item-editor input {
 	float: right;
 	left: 100px;
-	width: 85%;
+	width: 92%;
 	max-width: 400px;
 	margin-bottom: 10px;
 }
@@ -594,13 +592,15 @@ a > span {
     border: 1px solid var(--serperator);
     width: 4em;
     text-align: center;
+	border-radius: 5px;
+    transition: background-color 200ms cubic-bezier(.25,.8,.25,1);
 }
 
 .editor-button span:hover,
 .info-button span:hover,
 .about-button span:hover {
-	background-color: rgba(231, 233, 236, 0.5);
-	color: blue;
+	background-color: var(--link-hover-colour);
+	color: var(--background-colour);
 }
 
 .window {

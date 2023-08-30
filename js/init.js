@@ -3328,7 +3328,7 @@ function createIconToolbars() {
 		position: "bottom",
 		toolbarCss: {
 			// width: "310px", 
-			height: "66px", 
+			height: "72px", 
 			padding: "8px",
 		},
 		addition: $('#icon-calendar-content > div'),
