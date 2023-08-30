@@ -28,6 +28,7 @@ hr {
 button {
 	box-shadow: none;
 	border: none;
+	background-color: var(--popover-colour);
 }
 
 input {
@@ -444,7 +445,7 @@ a > span {
 	position: absolute;
 	min-width: 100px;
 	padding: 3px;
-	background-color: var(--background-colour);
+	background-color: var(--popover-colour);
 	border: 1px solid var(--serperator);
 	/* box-shadow: 2px 3px 5px grey; */
 	white-space: nowrap;
@@ -461,8 +462,9 @@ a > span {
 
 .menu li:not(.menu-item-disabled):hover,
 .menu li:not(.menu-item-disabled):hover {
-	background-color: green;
-    border-color: green;
+	background-color: var(--item-hover-bg);
+	color: var(--text-colour);
+    /* border-color: yellow; */
 }
 
 /* TODO */
@@ -775,7 +777,7 @@ a > span {
     text-align: center;
 	vertical-align: bottom;
     /* border: 1px solid; */
-    background-color: var(--popover-colour);
+    /* background-color: var(--popover-colour); */
     border-radius: var(--field-radius);
 	color: var(--ui-icon-colour);
 	transition: border-color 0.15s ease-in-out,
@@ -793,7 +795,8 @@ a > span {
 
 #icon-calendar-content-buttons button:hover, 
 .option-icon.pressed {
-	background-color: var(--item-select-bg);
+	background-color: var(--item-hover-bg);
+	color: var(--link-hover-colour);
 }
 
 #icon-calendar-content > div > div {
