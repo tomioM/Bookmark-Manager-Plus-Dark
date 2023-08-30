@@ -130,14 +130,10 @@ ul {
 
 a.option {
 	margin-top: 3.1px;
-}#header-panel
-
-#search-set > span {
-	background-color: var(--field) !important;
 }
 
-.fa-file-none, .fa-folder-none {
-	color: var(--detail-colour) !important;
+#header-panel #search-set > span {
+	background-color: var(--field) !important;
 }
 
 .fa {
