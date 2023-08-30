@@ -89,6 +89,8 @@
 		margin-right: 7px;
 	  }
 	.alertify-log-success {
+		display: none; /* Remove for feedback */
+
 		background: #363739;
 		background: rgba(54, 55, 57, .9);
 	}
