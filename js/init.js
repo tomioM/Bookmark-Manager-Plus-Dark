@@ -351,9 +351,9 @@ $(document).ready(function() {
 		
 		// folder
 		bmp.options.folder = items.folder;
-		$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-of a-folder-open'); // REMOVE LATER: fa-folder-none
+		$('#icon-folder-mode').removeClass('fa-folder fa-folder-of a-folder-open'); // REMOVE LATER:
 		if(items.folder == "none") {
-			$('#icon-folder-mode').addClass('fa-folder-o fa-folder-none');
+			$('#icon-folder-mode').addClass('fa-folder-o');
 		} else if(items.folder == "children") {
 			$('#icon-folder-mode').addClass('fa-folder');
 		} else {
@@ -731,7 +731,7 @@ function init() {
 			
 			// folder
 			bmp.options.folder = DEFAULT_ICON_FOLDER_MODE;
-			$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-o fa-folder-open');
+			$('#icon-folder-mode').removeClass('fa-folder fa-folder-o fa-folder-open');
 			$('#icon-folder-mode').addClass('fa-folder');
 			
 			// sort
@@ -3145,9 +3145,9 @@ function createIconToolbars() {
 		position: "bottom",
 	}).on("toolbarItemClick", function(e, item) {
 		
-		$(this).removeClass('fa-folder fa-folder-none fa-folder-o fa-folder-open');
+		$(this).removeClass('fa-folder fa-folder-o fa-folder-open');
 		if($(item).hasClass('folder-mode-none')) {
-			$(this).addClass('fa-folder-o fa-folder-none');
+			$(this).addClass('fa-folder-o');
 			bmp.options.folder = "none";
 		} else if($(item).hasClass('folder-mode-children')) {
 			$(this).addClass('fa-folder');
