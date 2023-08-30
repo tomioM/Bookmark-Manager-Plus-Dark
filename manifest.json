@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "Bookmark Manager Plus",
+	"name": "Advanced Bookmark Manager",
 	"version": "0.9.9.7",
-	"description": "Search bookmarks and do whatever you can imagine.",
+	"description": "Advanced bookmark search and exploration with revamped aesthetics",
 	
 	"options_ui": {
 		"page": "options.html",
