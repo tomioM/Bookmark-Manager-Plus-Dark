@@ -470,7 +470,7 @@ a > span {
 #explore-panel {
 	border-bottom: 1px solid var(--serperator);
 	/* box-shadow: 0px 9px 12px -10px #CCC; */
-    padding: 3px 1px;
+    padding: 4px 3px 5px 3px; /* init 3px 1px */
 }
 
 #explore-panel a {
