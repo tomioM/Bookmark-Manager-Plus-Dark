@@ -346,7 +346,7 @@ $(document).ready(function() {
 		if(items.page) {
 			$('#icon-file').addClass('fa-file');
 		} else {
-			$('#icon-file').addClass('fa-file-o fa-file-none');
+			$('#icon-file').addClass('fa-file-o');
 		}
 		
 		// folder
@@ -726,7 +726,7 @@ function init() {
 			
 			// page
 			bmp.options.page = true;
-			$('#icon-file').removeClass('fa-file fa-file-none');
+			$('#icon-file').removeClass('fa-file fa-file-o');
 			$('#icon-file').addClass('fa-file');
 			
 			// folder
@@ -3119,9 +3119,9 @@ function createIconToolbars() {
 		position: "bottom",
 	}).on("toolbarItemClick", function(e, item) {
 		
-		$(this).removeClass('fa-file fa-file-none');
+		$(this).removeClass('fa-file fa-file-o');
 		if($(item).hasClass('file-none')) {
-			$(this).addClass('fa-file fa-file-none');
+			$(this).addClass('fa-file-o');
 			bmp.options.page = false;
 		} else {
 			$(this).addClass('fa-file');
