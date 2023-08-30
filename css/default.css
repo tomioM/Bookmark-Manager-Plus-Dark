@@ -881,7 +881,7 @@ a > span {
 #icon-calendar-content-buttons {
 	position: relative;
 	display: flex;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }
 #icon-calendar-content-buttons > button {
 	cursor: pointer;
