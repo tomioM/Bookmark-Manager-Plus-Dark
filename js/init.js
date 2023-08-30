@@ -342,22 +342,22 @@ $(document).ready(function() {
 		
 		// page
 		bmp.options.page = items.page;
-		$('#icon-file').removeClass('fa-file fa-file-none');
+		$('#icon-file').removeClass('fa-file fa-file-none fa-folder-o');
 		if(items.page) {
 			$('#icon-file').addClass('fa-file');
 		} else {
-			$('#icon-file').addClass('fa-file fa-file-none');
+			$('#icon-file').addClass('fa-file-o fa-file-none');
 		}
 		
 		// folder
 		bmp.options.folder = items.folder;
-		$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-o');
+		$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-of a-folder-open'); // REMOVE LATER: fa-folder-none
 		if(items.folder == "none") {
-			$('#icon-folder-mode').addClass('fa-folder fa-folder-none');
+			$('#icon-folder-mode').addClass('fa-folder-o fa-folder-none');
 		} else if(items.folder == "children") {
 			$('#icon-folder-mode').addClass('fa-folder');
 		} else {
-			$('#icon-folder-mode').addClass('fa-folder-o');
+			$('#icon-folder-mode').addClass('fa-folder-open');
 		}
 		
 		// sort
@@ -731,7 +731,7 @@ function init() {
 			
 			// folder
 			bmp.options.folder = DEFAULT_ICON_FOLDER_MODE;
-			$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-o');
+			$('#icon-folder-mode').removeClass('fa-folder fa-folder-none fa-folder-o fa-folder-open');
 			$('#icon-folder-mode').addClass('fa-folder');
 			
 			// sort
@@ -3145,15 +3145,15 @@ function createIconToolbars() {
 		position: "bottom",
 	}).on("toolbarItemClick", function(e, item) {
 		
-		$(this).removeClass('fa-folder fa-folder-none fa-folder-o');
+		$(this).removeClass('fa-folder fa-folder-none fa-folder-o fa-folder-open');
 		if($(item).hasClass('folder-mode-none')) {
-			$(this).addClass('fa-folder fa-folder-none');
+			$(this).addClass('fa-folder-o fa-folder-none');
 			bmp.options.folder = "none";
 		} else if($(item).hasClass('folder-mode-children')) {
 			$(this).addClass('fa-folder');
 			bmp.options.folder = "children";
 		} else {
-			$(this).addClass('fa-folder-o');
+			$(this).addClass('fa-folder-open');
 			bmp.options.folder = "empty";
 		}
 		
