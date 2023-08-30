@@ -81,7 +81,11 @@ hr {
 	all: unset;
 } */
 
-element.style
+.header-panel-left {
+	padding-top: 2px !important;
+	padding-bottom: 3px !important;
+	height: auto !important;
+}
 
 #icon-calendar-content-buttons > button, #search-set > span {
 	padding-top: 5px;
@@ -729,7 +733,7 @@ a > span {
 	position: relative;
 	height: 27px;
 	border-bottom: 1px solid var(--serperator);
-	padding: 2px 2px 5px 2px; /* 2px 2px 0px 2px */
+	padding: 2px 3px 5px 3px; /* 2px 2px 0px 2px */
 	white-space: nowrap;
 }
 
