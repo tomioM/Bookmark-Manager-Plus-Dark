@@ -917,6 +917,10 @@ a > span {
 	height: 30px;
 }
 
+.tool-container.tool-bottom .tool-item:hover {
+	background-color: var(--item-select-bg);
+}
+
 .tool-container {
 	background-color: var(--popover-colour) !important;
 	/* border: 2px solid green !important; */
