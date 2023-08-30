@@ -11,7 +11,7 @@
 	border: 10px solid rgba(0,0,0,.7);
 	border-radius: 8px;
 	box-shadow: 0 3px 3px rgba(0,0,0,.3);
-	-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */
+	-webkit-background-clip: padding;     /* Safari 4? Come 6? */
 	   -moz-background-clip: padding;     /* Firefox 3.6 */
 	        background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
 }
