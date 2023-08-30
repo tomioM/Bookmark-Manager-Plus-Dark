@@ -623,7 +623,8 @@ a > span {
 #left-frame {
 	height: 590px;
 	left: 5px;
-    width: 282px;
+	/* Don't know how to change this yet; will have to untangle init.js to figure out */
+    width: 282px; 
     height: 590px;
 }
 #right-frame {
