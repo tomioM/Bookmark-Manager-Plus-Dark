@@ -2912,7 +2912,7 @@ function createIconToolbars() {
 		position: "bottom",
 		toolbarCss: {
 			width: "180px",
-			height: "215px",
+			height: "256px",
 		},
 		addition: $addition,
 	}).on("toolbarItemClick", function(e, item) {
