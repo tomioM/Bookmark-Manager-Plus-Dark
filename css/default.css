@@ -15,7 +15,7 @@
 	--detail-colour: #999999;
 	--ui-icon-colour: #999999;
 
-	--field-radius: 10px;
+	--field-radius: 8px;
 	--serperator: rgba(0, 0, 0, 0);
 	--folder-padding: 12px;
 	--popover-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px; /*rgba(0, 0, 0, .15) 0px 1px 4px */
@@ -165,11 +165,12 @@ div.editor-button span {
 }
 
 a.option {
-	margin-top: 3.1px;
+	margin-top: 3px;
 }
 
 #header-panel #search-set > span {
 	background-color: var(--field) !important;
+	padding: 5px;
 }
 
 .fa {
@@ -867,16 +868,11 @@ a > span {
 	background-color: var(--field-focus);
 }
 
-.option-icon {
-	padding: 4.2px 6.5px 6.5px 3.5px;
-}
-
 /*  Calendar Buttons */
 #icon-calendar-content-buttons > button,
 #search-set > span,
 .option-icon {
 	/* Toolbar button padding */
-
     text-align: center;
 	vertical-align: bottom;
     /* border: 1px solid; */
@@ -944,7 +940,7 @@ a > span {
 }
 
 .tool-item {
-	padding: 5px;
+	padding: 6.5px 5px 3.5px 5px;
 }
 .tool-container.tool-top, 
 .tool-container.tool-bottom {
@@ -973,6 +969,7 @@ a > span {
 
 
 #action-menu-toolset {
+	padding-top: 1.3px;
 	display: flex;
 	/* padding-right: 5px; */
 	/* max-width: 100px; */
