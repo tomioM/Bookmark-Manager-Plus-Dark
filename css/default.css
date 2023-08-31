@@ -867,12 +867,16 @@ a > span {
 	background-color: var(--field-focus);
 }
 
+.option-icon {
+	padding: 4.2px 6.5px 6.5px 3.5px;
+}
+
 /*  Calendar Buttons */
 #icon-calendar-content-buttons > button,
 #search-set > span,
 .option-icon {
 	/* Toolbar button padding */
-    padding: 4.5px 6.5px 6.5px 3.5px;
+
     text-align: center;
 	vertical-align: bottom;
     /* border: 1px solid; */
