@@ -84,6 +84,33 @@ ul {
 	all: unset;
 } */
 
+.editor-button span.button-cancel:hover {
+	border: 0.2px solid #6a6d7430;
+	background-color: #94b5f630;
+	color: var(--item-hover-select-bg);
+}
+
+.editor-button span.button-cancel {
+	border: 0.2px solid #9999996f;
+	background-color: var(--popover-colour);
+	color: var(--item-select-bg);
+	margin-left: 5px;
+}
+
+.editor-button span.button-ok {
+	background-color: var(--item-hover-select-bg);
+	color: var(--background-colour);
+}
+
+div.editor-button span {
+	cursor: pointer;
+	padding-bottom: 7px;
+}
+
+.editor-url > input:disabled {
+	display: none;
+}
+
 .icon-match-container > span > span,
 .icon-match-container > span > div  {
     display: inline-block;
@@ -606,13 +633,6 @@ a > span {
     text-align: center;
 	border-radius: 5px;
     transition: background-color 200ms cubic-bezier(.25,.8,.25,1);
-}
-
-.editor-button span:hover,
-.info-button span:hover,
-.about-button span:hover {
-	background-color: var(--link-hover-colour);
-	color: var(--background-colour);
 }
 
 .window {
