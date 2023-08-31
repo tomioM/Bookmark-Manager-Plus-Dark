@@ -103,7 +103,6 @@ ul {
 }
 
 div.editor-button span {
-	cursor: pointer;
 	padding-bottom: 7px;
 }
 
@@ -600,9 +599,8 @@ a > span {
 }
 
 #result-item-editor input {
-	float: right;
 	left: 100px;
-	width: 92%;
+	width: 93%;
 	max-width: 400px;
 	margin-bottom: 10px;
 }
