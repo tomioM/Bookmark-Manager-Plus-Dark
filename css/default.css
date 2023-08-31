@@ -1,7 +1,7 @@
 * {
 	--text-colour: #fff;
 	--background-colour: #2d2e31;
-	--popover-colour: #363739;
+	--popover-colour: #2d2e31;  /*363739*/
 	--field: #26272a;
 
 	--item-hover-bg: #3d4043;
@@ -18,7 +18,7 @@
 	--field-radius: 10px;
 	--serperator: rgba(0, 0, 0, 0);
 	--folder-padding: 12px;
-	--popover-shadow: rgba(0, 0, 0, .15) 0px 1px 4px;
+	--popover-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px; /*rgba(0, 0, 0, .15) 0px 1px 4px */
 
 	--color-main: orange;
 }
@@ -32,8 +32,8 @@ svg {
 hr {
 	/* border: 1px; */
 	border-color: var(--detail-colour);
-	margin: 0.2em 0;
-	opacity: 0%;
+	margin: 0.5em 0;
+	opacity: 25%;
 }
 
 button {
@@ -506,7 +506,7 @@ a > span {
 .menu {
 	position: absolute;
 	min-width: 100px;
-	padding: 3px;
+	padding: 5px 3px;
 	background-color: var(--popover-colour);
 	border: 1px solid var(--serperator);
 	/* box-shadow: 2px 3px 5px grey; */

@@ -2835,7 +2835,7 @@ function createIconToolbars() {
 		return $($switch + $toggle);
 	}
 	
-	var $addition = $('<div>').css({padding: "2px 0 0 0"});
+	var $addition = $('<div class="icon-match-container">').css({padding: "7px 4px 0 4px"});
 	
 	var $container = $('<span>').addClass('icon-title-match');
 	var $label = $('<span>').text("Title Match");
@@ -2911,8 +2911,8 @@ function createIconToolbars() {
 	$('#icon-filter').toolbar({
 		position: "bottom",
 		toolbarCss: {
-			width: "155px",
-			height: "180px",
+			width: "180px",
+			height: "215px",
 		},
 		addition: $addition,
 	}).on("toolbarItemClick", function(e, item) {
@@ -3171,7 +3171,7 @@ function createIconToolbars() {
 	
 	
 	
-	var $addition = $('<div>');
+	var $addition = $('<div>').css({padding: "7px 4px 0 4px"});
 	var $container = $('<span>').addClass('icon-sort-mode-group-bar');
 	var $roundSwitch = createRoundSwitch();
 	var $label = $('<span>').text("Group bar");
@@ -3182,7 +3182,7 @@ function createIconToolbars() {
 		content: '#icon-sort-mode-content',
 		position: "bottom",
 		toolbarCss: {
-			height: "60px",
+			height: "62px",
 		},
 		addition: $addition,
 	}).on("toolbarItemClick", function(e, item) {
