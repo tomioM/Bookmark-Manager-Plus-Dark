@@ -944,6 +944,7 @@ a > span {
 .tool-container.tool-top, 
 .tool-container.tool-bottom {
 	height: 30px;
+	color: #d6d6d6;
 }
 
 .tool-container.tool-bottom .tool-item:hover {
