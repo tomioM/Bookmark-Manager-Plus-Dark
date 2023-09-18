@@ -1052,6 +1052,11 @@ function showAbout() {
 	$window.find('#about-developer span:last').text(str_developer);
 	
 	$window.find('#about-version span:last').text(str_version);
+
+	$window.find('#about-ui-update span:last').text(str_ui_refresh);
+	
+	$window.find('#about-shortcut-list ul').html(str_shortcuts);
+
 	
 	
 	$window.find('.button-ok').off('click');

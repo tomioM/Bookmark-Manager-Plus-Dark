@@ -84,6 +84,11 @@ ul {
 	all: unset;
 } */
 
+#about-shortcut-list > ul {
+	/* color: var(--link-colour); */
+	opacity: 75%;
+}
+
 .editor-button span.button-cancel:hover {
 	border: 0.2px solid #6a6d7430;
 	background-color: #94b5f630;
@@ -97,7 +102,9 @@ ul {
 	margin-left: 5px;
 }
 
-.editor-button span.button-ok {
+.editor-button span.button-ok,
+.info-button span,
+.about-button span {
 	background-color: var(--item-hover-select-bg);
 	color: var(--background-colour);
 }
@@ -662,8 +669,10 @@ a > span {
 	float: right;
 }
 
-#info-title {
-	border-bottom: 1px solid lightgray;
+#info-title,
+#about-title {
+	opacity: 25%;
+	border-bottom: 1px solid var(--detail-colour);
     padding: 3px;
 }
 

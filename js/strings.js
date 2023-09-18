@@ -3,6 +3,19 @@
 
 var str_version = "0.9.9.7";
 var str_developer = "Kim Hyun-Woo";
+var str_ui_refresh = "Tomio Walkley-Miyagawa"
+var str_shortcuts = "<li>Ctrl + a : select all</li>" +
+"<li>Ctrl + c : copy</li>" +
+"<li>Ctrl + x : cut</li>" +
+"<li>Ctrl + v : paste</li>" +
+"<li>Ctrl + s : edit search box</li>" +
+"<li>Ctrl + e : edit item</li>" +
+"<li>Ctrl + f : add folder</li>" +
+"<li>Ctrl + b : add page</li>" +
+"<li>Ctrl + Shift + a : append/remove view</li>" +
+"<li>Ctrl + r : reset icon toolbar options</li>" +
+"<li>Left arrow / Backspace : explore backward</li>" +
+"<li>Right arrow : explore forward</li>"
 
 var str_preview = "Preview";
 var str_view = "View";
