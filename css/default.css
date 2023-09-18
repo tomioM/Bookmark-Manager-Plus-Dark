@@ -173,6 +173,12 @@ a.option {
 	padding: 5px;
 }
 
+#header-panel #search-set > span:focus-within {
+	outline-width: 2px;
+	outline-color: var(--item-select-bg);
+	outline-style: solid;
+}
+
 .fa {
 	color: var(--detail-colour);
 }
