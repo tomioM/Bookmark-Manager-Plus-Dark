@@ -479,7 +479,7 @@ function init() {
 				searchInput.focus();
 
 				// Append the pressed key to the input field
-				searchInput.value += event.key;
+				searchInput.value = event.key;
 
 				// Prevent the default behavior of the key press (e.g., typing into other elements)
 				event.preventDefault();
