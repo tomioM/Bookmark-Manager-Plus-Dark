@@ -473,7 +473,7 @@ function init() {
 		// Check if the input is not already focused
 		if (!isInputFocused) {
 			// Check if the pressed key is alphanumeric and no control key is pressed (e.g., Ctrl, Alt)
-			if (/^[a-zA-Z0-9]$/.test(event.key) && !event.ctrlKey && !event.altKey) {
+			if (/^[a-zA-Z0-9#()]$/.test(event.key) && !event.ctrlKey && !event.altKey) {
 				// Focus the input field
 				searchInput.focus();
 
