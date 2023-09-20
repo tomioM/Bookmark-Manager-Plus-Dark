@@ -84,6 +84,11 @@ ul {
 	all: unset;
 } */
 
+input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+
 #about-shortcut-list > ul {
 	/* color: var(--link-colour); */
 	opacity: 75%;
@@ -364,6 +369,7 @@ a.option {
 	position: absolute;
 	background-color: var(--popover-colour);
 	border-radius: var(--field-radius);
+	box-shadow: var(--popover-shadow);
 	max-height: 270px;
 	overflow: auto;
 	z-index: 15;
