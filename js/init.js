@@ -456,6 +456,7 @@ function init() {
 	// Start of Autofocus code
 	// Q. Why not use Autofocus attribute? A. Autofocus attribute prevents shortcuts from working while focused.
 	const searchInput = document.getElementById("search-editor");
+	const otherInputs = document.querySelectorAll('input[type="text"]:not(#searchInput)');
 	let isInputFocused = false;
 
 	// Add a focus event listener to track when the input is focused
@@ -471,7 +472,7 @@ function init() {
 	// Add a keydown event listener to the document
 	document.addEventListener("keydown", (event) => {
 		// Check if the input is not already focused
-		if (!isInputFocused) {
+		if (!isInputFocused && !Array.from(otherInputs).some(input => input === document.activeElement)) {
 			// Check if the pressed key is alphanumeric and no control key is pressed (e.g., Ctrl, Alt)
 			if (/^[a-zA-Z0-9#()]$/.test(event.key) && !event.ctrlKey && !event.altKey) {
 				// Focus the input field
