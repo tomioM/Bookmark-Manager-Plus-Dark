@@ -453,36 +453,39 @@ $(document).ready(function() {
 
 function init() {
 
-	// const searchInput = document.getElementById("search-editor");
-	// let isInputFocused = false;
+	// Start of Autofocus code
+	// Q. Why not use Autofocus attribute? A. Autofocus attribute prevents shortcuts from working while focused.
+	const searchInput = document.getElementById("search-editor");
+	let isInputFocused = false;
 
-	// // Add a focus event listener to track when the input is focused
-	// searchInput.addEventListener("focus", () => {
-	// 	isInputFocused = true;
-	// });
+	// Add a focus event listener to track when the input is focused
+	searchInput.addEventListener("focus", () => {
+		isInputFocused = true;
+	});
 
-	// // Add a blur event listener to track when the input loses focus
-	// searchInput.addEventListener("blur", () => {
-	// 	isInputFocused = false;
-	// });
+	// Add a blur event listener to track when the input loses focus
+	searchInput.addEventListener("blur", () => {
+		isInputFocused = false;
+	});
 
-	// // Add a keydown event listener to the document
-	// document.addEventListener("keydown", (event) => {
-	// 	// Check if the input is not already focused
-	// 	if (!isInputFocused) {
-	// 		// Check if the pressed key is alphanumeric and no control key is pressed (e.g., Ctrl, Alt)
-	// 		if (/^[a-zA-Z0-9]$/.test(event.key) && !event.ctrlKey && !event.altKey) {
-	// 			// Focus the input field
-	// 			searchInput.focus();
+	// Add a keydown event listener to the document
+	document.addEventListener("keydown", (event) => {
+		// Check if the input is not already focused
+		if (!isInputFocused) {
+			// Check if the pressed key is alphanumeric and no control key is pressed (e.g., Ctrl, Alt)
+			if (/^[a-zA-Z0-9]$/.test(event.key) && !event.ctrlKey && !event.altKey) {
+				// Focus the input field
+				searchInput.focus();
 
-	// 			// Append the pressed key to the input field
-	// 			searchInput.value += event.key;
+				// Append the pressed key to the input field
+				searchInput.value += event.key;
 
-	// 			// Prevent the default behavior of the key press (e.g., typing into other elements)
-	// 			event.preventDefault();
-	// 		}
-	// 	}
-	// });
+				// Prevent the default behavior of the key press (e.g., typing into other elements)
+				event.preventDefault();
+			}
+		}
+	});
+	// End of Autofocus code
 
 	$document = $(document);
 	$body = $('body');
