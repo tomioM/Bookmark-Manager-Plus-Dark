@@ -2,15 +2,17 @@
 	--text-colour: #fff;
 	--background-colour: #2d2e31;
 	--popover-colour: #2d2e31;  /*363739*/
-	--field: #242528;
+	--input: #242528;
+	--focus: #3777f6;
 
 	--item-hover-bg: #3d4043;
 	--item-select-bg: #94b5f6;
 	--item-hover-select-bg: #9abbfd;
 
 
-	--link-colour: #cecece;
-	--link-hover-colour: #9abbfd;
+	--btn: #cecece;
+	--btn-hover-bg: #454649;
+	--btn-select-bg: #9abbfd;
 
 	--detail-colour: #999999;
 	--ui-icon-colour: #999999;
@@ -46,13 +48,13 @@ input {
 	color: var(--text-colour);
 	box-shadow: none;
 	border: none;
-	background-color: var(--field);
+	background-color: var(--input);
 	border-radius: var(--field-radius);
 	padding: 6px 1em 6px 1em;
 }
 
 a {
-	color: var(--link-colour);
+	color: var(--btn);
 }
 
 body {
@@ -167,8 +169,8 @@ div.editor-button span {
 
 .switch.switch-round.switch-off .switch-toggle {
 	left: 0%;
-	background-color: var(--link-colour);
-	border-color: var(--link-colour);
+	background-color: var(--btn);
+	border-color: var(--btn);
 }
 
 .switch.switch-round .switch-toggle {
@@ -181,13 +183,13 @@ a.option {
 }
 
 #header-panel #search-set > span {
-	background-color: var(--field) !important;
+	background-color: var(--input) !important;
 	padding: 5px;
 }
 
 #header-panel #search-set > span:focus-within {
 	outline-width: 2px;
-	outline-color: var(--item-select-bg);
+	outline-color: var(--focus);
 	outline-style: solid;
 }
 
@@ -540,7 +542,7 @@ a > span {
 	/* font-weight: bold; */
 }
 #explore-panel .explore-hierarchy a:hover {
-	color: var(--link-hover-colour);
+	color: var(--btn-select-bg);
 }
 
 .dateclick {
@@ -759,7 +761,7 @@ a > span {
 	/* margin: 5px 0; */
 	height: 590px;
     width: 3px;
-	background: var(--field);
+	background: var(--input);
     vertical-align: top;
 	z-index: 5;
 	/* background: #dedede; */
@@ -871,7 +873,7 @@ a > span {
 	/* border-bottom: solid 1px #EEEEEE; */
 	transition: background-color 0.4s /* 0.2s */ linear;	/* delay for clear to work */
 	    transition: width 0.25s cubic-bezier(0.21, 0.4, 0.53, 0.78), background-color 0.25s linear, border 0.4s linear;
-	background-color: var(--field);
+	background-color: var(--input);
 	
 	/* max-width: 300px; */
     width: 80px;
@@ -919,8 +921,8 @@ a > span {
 
 #icon-calendar-content-buttons button:hover, 
 .option-icon.pressed {
-	background-color: var(--item-hover-bg);
-	color: var(--link-hover-colour);
+	background-color: var(--btn-hover-bg);
+	/* color: var(--focus); */
 }
 
 #icon-calendar-content > div > div {
@@ -969,7 +971,7 @@ a > span {
 }
 
 .tool-container.tool-bottom .tool-item:hover {
-	background-color: var(--item-select-bg);
+	background-color: var(--btn-hover-bg);
 }
 
 .tool-container {
@@ -985,7 +987,7 @@ a > span {
 }
 
 .tool-item > .fa {
-	color: var(--link-colour);
+	color: var(--btn);
 }
 
 
@@ -1014,7 +1016,7 @@ a > span {
 }
 
 .fa-explore-movable {
-	color: var(--link-colour) !important;
+	color: var(--btn) !important;
 }
 
 /* .fa-sort-title {
