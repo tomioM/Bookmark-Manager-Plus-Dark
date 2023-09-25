@@ -187,7 +187,8 @@ a.option {
 	padding: 5px;
 }
 
-#header-panel #search-set > span:focus-within {
+#header-panel #search-set > span:focus-within,
+input:focus {
 	outline-width: 2px;
 	outline-color: var(--focus);
 	outline-style: solid;
