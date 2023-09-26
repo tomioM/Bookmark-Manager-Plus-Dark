@@ -19,7 +19,7 @@
 
 	--field-radius: 8px;
 	--serperator: rgba(0, 0, 0, 0);
-	--folder-padding: 12px;
+	--folder-padding: 13px;
 	--popover-shadow: rgba(0, 0, 0, 0.27) 0px 2px 25px; /*rgba(0, 0, 0, .15) 0px 1px 4px */
 
 	--color-main: orange;
@@ -441,7 +441,7 @@ a > span {
 #result-panel ul a {
 	display: block;
 	overflow: hidden;
-	padding: 0.3em 0.6em; /*  0.22em 0.6em */
+	padding: 0.3em 0.7em; /*  0.22em 0.6em */
 	box-sizing: border-box;
 	text-decoration: none;
 	/* color: #15C; */
