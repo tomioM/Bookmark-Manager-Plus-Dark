@@ -217,6 +217,8 @@ $(document).ready(function() {
 	// restore synced data
 	StorageManager.get({
 		// default values for sync data if not set
+
+		// TODO: Implement search state saving
 		
 		// icon-toolbar-1
 		title: true,
@@ -1880,7 +1882,6 @@ function init() {
 	});
 	
 	$document.on('contextmenu', '#result-panel', function(e) {
-		
 		if(bmp.currFrame == '#left-frame' && !bmp.isViewAppended) {
 			e.preventDefault();
 			return;
