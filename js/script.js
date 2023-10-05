@@ -69,6 +69,8 @@ function createList(parameter) {
 	if(isGroupBar == undefined) {
 		isGroupBar = bmp.options.group;
 	}
+
+	console.log("Hello, I'm here! I think this is where the list is rendered");
 	
 	if(bmp.isHierarchyInvalidated) {
 		bmp.isHierarchyInvalidated = false;
@@ -926,8 +928,11 @@ function preview(parameter) {
 // arrow
 // target
 function explore(parameter) {
-	
+	console.trace();
+
+	console.log(parameter);
 	console.warn("explore");
+
 	
 	var id = parameter.id;
 	var hierarchy = parameter.hierarchy;
@@ -1117,6 +1122,9 @@ function search(isManual) {
 	console.warn("search");
 	
 	//console.time("search");
+
+	// TODO: When searchCashed, Set searchEditor value to cache and run function
+
 	
 	if(_search(isManual) == "skipHistory") return;
 	

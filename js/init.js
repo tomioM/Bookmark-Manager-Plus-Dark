@@ -189,6 +189,8 @@ var BookmarkManagerPlus = {
 
 var bmp = BookmarkManagerPlus;
 
+console.log(bmp);
+
 var $document;
 var $body;
 
@@ -215,7 +217,8 @@ $(document).ready(function() {
 	]);
 	
 	// restore synced data
-	StorageManager.get({
+	StorageManager.get(
+		{
 		// default values for sync data if not set
 
 		// TODO: Implement search state saving
@@ -442,14 +445,26 @@ $(document).ready(function() {
 		
 		// exploreHierarchy
 		bmp.exploreHierarchy = items.exploreHierarchy;
-		explore({
-			id: bmp.exploreHierarchy.right.id, 
-			hierarchy: bmp.exploreHierarchy.right.hierarchy, 
-			targetFrame: '#right-frame',
-		});
+		// TODO This triggers the explore function. Add a conditional statement which restores the previous search if it was active on close
+		// explore({
+		// 	id: bmp.exploreHierarchy.right.id, 
+		// 	hierarchy: bmp.exploreHierarchy.right.hierarchy, 
+		// 	targetFrame: '#right-frame',
+		// });
+
+		// console.log($searchEditor.val());
+
+		console.log(document.getElementById("search-editor"));
+
+		document.getElementById("search-editor").value = "youtube"
+
+		search(true);
+
 		
 		bmp.initialized = true;
 	});
+
+	console.log("Init complete?");
 	
 });
 
