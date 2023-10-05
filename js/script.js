@@ -879,7 +879,6 @@ function showExploreSiblings(parentId, item, e) {
 		top: top + height,
 	});
 	
-	// TODO:
 	$exploreSibling.stop(true, true).show().scrollTop(0);
 	e.stopPropagation();
 }
@@ -928,9 +927,12 @@ function preview(parameter) {
 // arrow
 // target
 function explore(parameter) {
-	console.trace();
 
-	console.log(parameter);
+	// * Clears the search cache, indicating that the most recent screen was not explore
+	StorageManager.set({
+		searchCache: "",
+	});
+
 	console.warn("explore");
 
 	
@@ -1121,16 +1123,18 @@ function search(isManual) {
 	
 	console.warn("search");
 	
-	//console.time("search");
-
-	// TODO: When searchCashed, Set searchEditor value to cache and run function
-
-	
 	if(_search(isManual) == "skipHistory") return;
 	
 	//console.timeEnd("search");
 	
 	var query =  $searchEditor.val();
+
+	// * Caches the query in local storage
+	StorageManager.set({
+		searchCache: query,
+	});
+
+
 	if(query.length == 0) return;
 	
 	var $history = $searchHistory.find('ul');

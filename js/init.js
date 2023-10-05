@@ -138,6 +138,8 @@ var BookmarkManagerPlus = {
 	
 	isHierarchyInvalidated: false,
 	hierarchyCache: {},
+
+	searchCache: "",
 	
 	
 	/* 
@@ -220,8 +222,6 @@ $(document).ready(function() {
 	StorageManager.get(
 		{
 		// default values for sync data if not set
-
-		// TODO: Implement search state saving
 		
 		// icon-toolbar-1
 		title: true,
@@ -283,6 +283,8 @@ $(document).ready(function() {
 				hierarchy: [],
 			}, 
 		},
+
+		searchCache: ""
 		
 	}, function(items) {
 		
@@ -445,22 +447,21 @@ $(document).ready(function() {
 		
 		// exploreHierarchy
 		bmp.exploreHierarchy = items.exploreHierarchy;
-		// TODO This triggers the explore function. Add a conditional statement which restores the previous search if it was active on close
-		// explore({
-		// 	id: bmp.exploreHierarchy.right.id, 
-		// 	hierarchy: bmp.exploreHierarchy.right.hierarchy, 
-		// 	targetFrame: '#right-frame',
-		// });
-
-		// console.log($searchEditor.val());
-
-		console.log(document.getElementById("search-editor"));
-
-		document.getElementById("search-editor").value = "youtube"
-
-		search(true);
+		explore({
+			id: bmp.exploreHierarchy.right.id, 
+			hierarchy: bmp.exploreHierarchy.right.hierarchy, 
+			targetFrame: '#right-frame',
+		});
 
 		
+		console.log(bmp);
+		console.log(items);
+
+		if (items.searchCache) {
+			document.getElementById("search-editor").value = items.searchCache;
+			search(true);
+		}
+
 		bmp.initialized = true;
 	});
 
@@ -469,7 +470,6 @@ $(document).ready(function() {
 });
 
 function init() {
-
 	// Start of Autofocus code
 	// Q. Why not use Autofocus attribute? A. Autofocus attribute prevents shortcuts from working while focused.
 	const searchInput = document.getElementById("search-editor");
