@@ -467,6 +467,7 @@ $(document).ready(function() {
 		const resultsPanels = document.querySelectorAll("#result-panel");
 		let scrollLeft = 0;
 		let scrollRight = 0;
+		let lastScrollPosition;
 
 		resultsPanels[0].onscroll = function(){
 			scrollLeft = resultsPanels[0].scrollTop;
@@ -480,10 +481,14 @@ $(document).ready(function() {
 		setInterval(updateScrollCache, 1000)
 
 		function updateScrollCache() {
-			StorageManager.set({
-				scrollPositionLeft: scrollLeft,
-				scrollPositionRight: scrollRight,
-			});
+			if (lastScrollPosition != scrollLeft + scrollRight) {
+				StorageManager.set({
+					scrollPositionLeft: scrollLeft,
+					scrollPositionRight: scrollRight,
+				});
+				console.log("Local storage updated");
+			}
+			lastScrollPosition = scrollLeft + scrollRight;
 		}
 
 		bmp.initialized = true;
