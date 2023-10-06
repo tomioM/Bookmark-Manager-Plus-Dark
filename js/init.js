@@ -533,6 +533,17 @@ function init() {
 	// End of Autofocus code
 
 
+	document.getElementById('visit-random-item').addEventListener('click', visitRandomVisible);
+
+	function visitRandomVisible() {
+		const resultItems = $('#result-list li:not(:has(>span))');
+		const url = $(resultItems[Math.floor(Math.random()*resultItems.length)]).data("url");
+		console.log(url);
+		TabManager.update({
+			url: url,
+			active: false,
+		});
+	}
 
 	$document = $(document);
 	$body = $('body');
@@ -1466,6 +1477,12 @@ function init() {
 				}
 				
 				e.preventDefault();
+			}
+
+			// [Ctrl + r]
+			// Visit random visible page
+			if(e.key == "r") {
+				if(e.ctrlKey) visitRandomVisible();
 			}
 			
 			// [Ctrl + a]
@@ -2656,7 +2673,7 @@ function init() {
 	
 	// selectable이 먼저 우선권이 있기 때문에 그곳에서 처리되지 않을 경우에만 적용
 	$document.on('click', '#result-list li:not(.group)', function(e) {
-		
+
 		var curr = selectFromCurrFrame('#result-list li:not(.group)').index($(this));
 		
 		if(e.ctrlKey && !e.shiftKey) {
@@ -2716,8 +2733,10 @@ function init() {
 			});
 			
 		// page
+		// TODO: REF
 		} else {
 			var url = $(this).data('url');
+			console.log(url);
 			TabManager.update({
 				url: url,
 				active: false,

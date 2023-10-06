@@ -29,6 +29,8 @@ function initView(targetFrame, isSearch) {
 		resultsPanels[0].scrollTop = items.scrollPositionLeft;
 		resultsPanels[1].scrollTop = items.scrollPositionRight;
 	})
+
+	
 }
 
 function getHierarchy(item) {
