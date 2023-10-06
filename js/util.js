@@ -1079,8 +1079,7 @@ function showPreference() {
 }
 
 function buildOptionMenu(items) {
-	
-	$optionMenu.find('li').hide();
+	$optionMenu.find('li:not(.custom)').hide();
 	$optionMenu.find('hr').remove();
 	$optionMenu.find('li').removeClass('menu-item-disabled');
 	
