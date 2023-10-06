@@ -1480,7 +1480,10 @@ function init() {
 			// [Ctrl + r]
 			// Visit random visible page
 			if(e.key == "r") {
-				if(e.ctrlKey && !e.shiftKey) visitRandomVisible();
+				if(e.ctrlKey && !e.shiftKey) {
+					visitRandomVisible();
+					e.preventDefault();
+				}
 			}
 			
 			// [Ctrl + a]
