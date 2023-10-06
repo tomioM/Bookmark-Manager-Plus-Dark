@@ -187,11 +187,12 @@ var BookmarkManagerPlus = {
 	 *  event queue being processed at the end of refreshTree()
 	 */
 	refreshTreeQueueEvents: [],
+
+	scrollPositionLeft: 0,
+	scrollPositionRight: 0,
 };
 
 var bmp = BookmarkManagerPlus;
-
-console.log(bmp);
 
 var $document;
 var $body;
@@ -284,7 +285,10 @@ $(document).ready(function() {
 			}, 
 		},
 
-		searchCache: ""
+		searchCache: "",
+
+		scrollPositionLeft: 0,
+		scrollPositionRight: 0,
 		
 	}, function(items) {
 		
@@ -453,19 +457,37 @@ $(document).ready(function() {
 			targetFrame: '#right-frame',
 		});
 
-		
-		console.log(bmp);
-		console.log(items);
-
+		// If search cached, restore it
 		if (items.searchCache) {
 			document.getElementById("search-editor").value = items.searchCache;
 			search(true);
 		}
 
+		// Update scroll position cache
+		const resultsPanels = document.querySelectorAll("#result-panel");
+		let scrollLeft = 0;
+		let scrollRight = 0;
+
+		resultsPanels[0].onscroll = function(){
+			scrollLeft = resultsPanels[0].scrollTop;
+		};
+
+		resultsPanels[1].onscroll = function(){
+			scrollRight = resultsPanels[1].scrollTop;
+		};
+
+		// Update storage every second as not to unnecessarily overwhelm it
+		setInterval(updateScrollCache, 1000)
+
+		function updateScrollCache() {
+			StorageManager.set({
+				scrollPositionLeft: scrollLeft,
+				scrollPositionRight: scrollRight,
+			});
+		}
+
 		bmp.initialized = true;
 	});
-
-	console.log("Init complete?");
 	
 });
 
@@ -504,6 +526,8 @@ function init() {
 		}
 	});
 	// End of Autofocus code
+
+
 
 	$document = $(document);
 	$body = $('body');

@@ -19,6 +19,16 @@ function initView(targetFrame, isSearch) {
 	}
 	
 	$(targetFrame).find('#result-panel').scrollTop(0);
+
+	// Restore cached scroll position
+	StorageManager.get({
+		scrollPositionLeft: 0,
+		scrollPositionRight: 0,
+	}, items => {
+		const resultsPanels = document.querySelectorAll("#result-panel");
+		resultsPanels[0].scrollTop = items.scrollPositionLeft;
+		resultsPanels[1].scrollTop = items.scrollPositionRight;
+	})
 }
 
 function getHierarchy(item) {
@@ -69,8 +79,6 @@ function createList(parameter) {
 	if(isGroupBar == undefined) {
 		isGroupBar = bmp.options.group;
 	}
-
-	console.log("Hello, I'm here! I think this is where the list is rendered");
 	
 	if(bmp.isHierarchyInvalidated) {
 		bmp.isHierarchyInvalidated = false;
@@ -167,7 +175,7 @@ function createList(parameter) {
 	
 	
 	
-		
+	
 	if(sortMode == "hierarchy") {
 		
 		var hash = {};
@@ -508,7 +516,7 @@ function createList(parameter) {
 		}
 		$ul.append(list);
 	}
-	
+
 	updateGroupMaxWidth(targetFrame);
 }
 
@@ -1133,7 +1141,6 @@ function search(isManual) {
 	StorageManager.set({
 		searchCache: query,
 	});
-
 
 	if(query.length == 0) return;
 	
