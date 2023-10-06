@@ -1480,7 +1480,7 @@ function init() {
 			// [Ctrl + r]
 			// Visit random visible page
 			if(e.key == "r") {
-				if(e.ctrlKey) visitRandomVisible();
+				if(e.ctrlKey && !e.shiftKey) visitRandomVisible();
 			}
 			
 			// [Ctrl + a]
@@ -1630,7 +1630,7 @@ function init() {
 			// [Ctrl + r]
 			// Reset
 			if(e.keyCode == KeyEvent.DOM_VK_R) {
-				if(e.ctrlKey && !e.shiftKey) {
+				if(e.ctrlKey && e.shiftKey) {
 					$('#reset-icon-toolbar-options').trigger('click');
 					e.preventDefault();
 				}
