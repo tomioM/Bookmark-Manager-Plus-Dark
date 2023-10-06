@@ -478,7 +478,7 @@ $(document).ready(function() {
 		};
 
 		// Update storage every second as not to unnecessarily overwhelm it
-		setInterval(updateScrollCache, 1000)
+		setInterval(updateScrollCache, 500)
 
 		function updateScrollCache() {
 			if (lastScrollPosition != scrollLeft + scrollRight) {
