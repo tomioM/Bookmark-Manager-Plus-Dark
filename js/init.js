@@ -486,7 +486,6 @@ $(document).ready(function() {
 					scrollPositionLeft: scrollLeft,
 					scrollPositionRight: scrollRight,
 				});
-				console.log("Local storage updated");
 			}
 			lastScrollPosition = scrollLeft + scrollRight;
 		}
@@ -538,7 +537,6 @@ function init() {
 	function visitRandomVisible() {
 		const resultItems = $('#result-list li:not(:has(>span))');
 		const url = $(resultItems[Math.floor(Math.random()*resultItems.length)]).data("url");
-		console.log(url);
 		TabManager.update({
 			url: url,
 			active: false,
@@ -2733,10 +2731,8 @@ function init() {
 			});
 			
 		// page
-		// TODO: REF
 		} else {
 			var url = $(this).data('url');
-			console.log(url);
 			TabManager.update({
 				url: url,
 				active: false,
