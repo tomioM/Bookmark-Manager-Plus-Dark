@@ -13,7 +13,8 @@ var str_shortcuts = "<li>Ctrl + a : select all</li>" +
 "<li>Ctrl + f : add folder</li>" +
 "<li>Ctrl + b : add page</li>" +
 "<li>Ctrl + Shift + a : append/remove view</li>" +
-"<li>Ctrl + r : reset icon toolbar options</li>" +
+"<li>Ctrl + r : visit random visible page</li>" +
+"<li>Ctrl + Shift + r : reset icon toolbar options</li>" +
 "<li>Left arrow / Backspace : explore backward</li>" +
 "<li>Right arrow : explore forward</li>"
 
