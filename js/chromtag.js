@@ -28,6 +28,10 @@ function updateScrollableContentHeight() {
 $(document).ready(function() {
 	// Initial call to set the height
 	updateScrollableContentHeight();
+
+	// const draggableElement = document.querySelector('#separator');
+	$('#separator').on('dragstop', updateScrollableContentHeight);
+	// draggableElement.addEventListener('mouseout', updateScrollableContentHeight);
   });
 
 App.click = function() {

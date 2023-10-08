@@ -34,7 +34,6 @@
 	/* box-shadow: var(--popover-shadow); */
 	max-height: 400px;
 	overflow: auto;
-	z-index: 15;
 	position: relative;
 	padding: 2px 6px;
 }
@@ -95,7 +94,7 @@ body {
 	/* FWIDTH */
 	width: 420px;	/* 5 + 390 + 5 == 400 */
 	height: 590px;
-	margin: 5px;
+	margin: 5px 5px 0 5px;
 	word-wrap: break-word;
 	user-select: none;
 	color: var(--text-colour) !important;
@@ -250,7 +249,7 @@ input:focus {
 #result-panel {
 	/* position: relative; */
 	overflow: auto;
-	transition: all 0.3s linear;
+	/* transition: all 0.3s linear; */
 }
 
 #result-panel [type=checkbox] {
@@ -357,6 +356,8 @@ input:focus {
 	font-size: 0.9em;
 	cursor: default;
 	color: var(--detail-colour);
+	background-color: var(--background-colour);
+	padding-bottom: 5px;
 }
 #footer-panel div:first-child {
 	display: inline-block;
@@ -779,7 +780,6 @@ a > span {
     height: 590px;
 }
 #right-frame {
-	/* left: 260px; */
 	height: 590px;
 	right: 5px;
 	/* FWIDTH, Also update 633, 641 in init.js; init 390*/
