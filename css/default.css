@@ -26,18 +26,17 @@
 }
 
 .tags-wrap {
-	margin-top: 8px;
 	cursor: default;
-	border: solid 1px var(--serperator);
+	/* border: solid 1px var(--serperator); */
 	position: absolute;
-	background-color: #2d2e31ac;
-	border-radius: var(--icon-radius);
-	box-shadow: var(--popover-shadow);
-	max-height: 500px;
+	/* background-color: #2d2e31ac; */
+	/* border-radius: var(--icon-radius); */
+	/* box-shadow: var(--popover-shadow); */
+	max-height: 400px;
 	overflow: auto;
 	z-index: 15;
 	position: relative;
-	padding: 4px 6px;
+	padding: 2px 6px;
 }
 
 .label {

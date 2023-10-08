@@ -105,10 +105,9 @@ App.getTags = function(bookmark) {
 		});
 	});
 
-	const searchInput = document.getElementById("search-editor");
-	searchInput.focus();
-
     $(document.body).on('click', 'li a.label', function(e){
+		const searchInput = document.getElementById("search-editor");
+
         // Prevent the default behavior of the anchor element (e.g., following a link)
         e.preventDefault();
 
