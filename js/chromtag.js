@@ -7,21 +7,16 @@ App.isGenerated = false
 // Function to update the scrollable content height
 function updateScrollableContentHeight() {
 	var containerHeight = $('#right-frame').height();
-	console.log(containerHeight);
 	var totalToolbarHeight = 0;
 
 	// Calculate the combined height of all toolbar elements
 	$("#right-frame > div:not([id='result-panel'])").each(function() {
 		totalToolbarHeight += $(this).outerHeight();
-		console.log($(this));
 	});
 
-	console.log(totalToolbarHeight);
 
 	var scrollableContentHeight = containerHeight - totalToolbarHeight;
 	
-	console.log(scrollableContentHeight);
-	console.log($('#right-frame > #result-panel'));
 	$('#right-frame > #result-panel').css('max-height', scrollableContentHeight + 'px');
 	}
 
@@ -129,10 +124,6 @@ App.getTags = function(bookmark) {
 	$('#tags').html('');
 	$('#addTag').html('');
 
-	// function test() {
-	// 	console.log('Hello');
-	// }
-
 	chrome.bookmarks.getTree(function(itemTree){
 		itemTree.forEach(function(item){
 			App.processTag(item);
@@ -149,9 +140,6 @@ App.getTags = function(bookmark) {
         // Access the data-tag attribute value
         var dataTagValue = $(this).attr('data-tag');
         
-        // Log the data-tag value to the console
-        console.log("data-tag value:", dataTagValue);
-
 		let searchString = searchInput.value.slice(0, searchInput.selectionStart) + searchInput.value.slice(searchInput.selectionEnd);
 		searchString = searchString.trim();
         searchString = searchString + ' ' + dataTagValue;
