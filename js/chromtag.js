@@ -86,7 +86,7 @@ App.processTag = function(node) {
 		
 		var matchTags = App.matchTags(node.title);
 
-		for(var i=1; i < matchTags.length; i++) {
+		for(var i=0; i < matchTags.length; i++) {
 			if($('#tags a[data-tag="'+matchTags[i]+'"]').size()==0) {
 
 				// tags

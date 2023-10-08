@@ -710,6 +710,8 @@ function init() {
 				
 				updateGroupMaxWidth('#right-frame');
 				updateGroupMaxWidth('#left-frame');
+
+				updateScrollableContentHeight();
 				
 				bmp.isExtending = false;
 				
@@ -745,7 +747,9 @@ function init() {
 				
 				updateGroupMaxWidth('#right-frame');
 				updateGroupMaxWidth('#left-frame');
-				
+
+				updateScrollableContentHeight();
+
 				StorageManager.set({
 					append: false,
 				});
