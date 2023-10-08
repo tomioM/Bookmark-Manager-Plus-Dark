@@ -531,7 +531,7 @@ function init() {
 	});
 	// End of Autofocus code
 
-
+	// Start of Visit Random Visible
 	document.getElementById('visit-random-item').addEventListener('click', visitRandomVisible);
 
 	function visitRandomVisible() {
@@ -542,6 +542,13 @@ function init() {
 			active: false,
 		});
 	}
+	// End of Visit Random Visible
+
+	// Start of ChromTag integration
+	const tagMenuBtn = document.querySelector('.tag-menu-btn');
+	// console.log(tagMenuBtn);
+	tagMenuBtn.addEventListener('click', App.click);
+
 
 	$document = $(document);
 	$body = $('body');

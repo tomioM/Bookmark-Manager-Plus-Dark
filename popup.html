@@ -12,8 +12,10 @@
 	<link rel="stylesheet" href="lib/selectableScroll/themes/jquery-ui-ext.css">
 	<link rel="stylesheet" href="css/switch.css">
 	<link rel="stylesheet" href="css/default.css">
+	<!-- <link rel="stylesheet" href="css/chomtag.css"> -->
 	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
 	<script src="lib/jquery/jquery-ui.min.js"></script>
+	<script src="js/chromtag.js"></script>
 	<script src="lib/alertify/alertify.js"></script>
 	<script src="lib/toolbar/toolbar.js"></script>
 	<script src="lib/picker/picker.js"></script>
@@ -27,6 +29,8 @@
 	<script src="js/script.js"></script>
 </head>
 <body>
+	<!-- <ul id="tags"><li></li></ul> -->
+
 	<div id="left-frame" class="frame">
 		<div id="header-panel" class="header-panel-left">
 			<span id="view-icon"></span>
@@ -157,6 +161,9 @@
 				<span>
 					<span id="search-icon" class="fa fa-basic fa-hover fa-search" aria-hidden="true"></span>
 					<input type="search" id="search-editor" placeholder="Search" title="Editor for search (use up or down key to find recently used queries)">
+					<a href="#" class="tag-menu-btn">
+						<span class="fa fa-basic fa-hover fa-hashtag" aria-hidden="true"></span>
+					</a>
 					
 					<a href="#" class="search-extend-trigger">
 						<span class="fa fa-hover fa-plus"></span>
@@ -167,6 +174,9 @@
 				</span>
 				<div id="search-history">
 					<ul></ul>
+				</div>
+				<div class="tags-wrap" style="display: none;">
+					<ul id="tags"></ul>
 				</div>
 			</div>
 		</div>
@@ -400,5 +410,6 @@
 			<span class="fa fa-basic fa-hover fa-trash" aria-hidden="true"></span>
 		</a>
 	</div>
+
 </body>
 </html>

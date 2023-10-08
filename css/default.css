@@ -25,6 +25,36 @@
 	--color-main: orange;
 }
 
+.tags-wrap {
+	margin-top: 6px;
+	cursor: default;
+	border: solid 1px var(--serperator);
+	position: absolute;
+	background-color: #2d2e31ac;
+	border-radius: var(--icon-radius);
+	box-shadow: var(--popover-shadow);
+	max-height: 500px;
+	overflow: auto;
+	z-index: 15;
+	position: relative;
+}
+
+.label {
+    float: left;
+    padding: 4px;
+    color: #fff;
+    border-radius: 4px;
+    margin: 0 5px 6px 0;
+    font-weight: bold;
+    text-decoration: none;
+    background: #3d3d3d;
+}
+
+.label:hover {
+	color: var(--background-colour);
+	background-color: var(--item-hover-select-bg);
+}
+
 svg {
 	path {
 		fill: red;
