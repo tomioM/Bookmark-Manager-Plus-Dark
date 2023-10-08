@@ -120,7 +120,7 @@ App.getTags = function(bookmark) {
         // Log the data-tag value to the console
         console.log("data-tag value:", dataTagValue);
 
-        searchInput.value += ' ' + dataTagValue;
+        searchInput.value += dataTagValue + ' ';
 
         search(true);
 });
