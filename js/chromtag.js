@@ -4,7 +4,31 @@ var App = {};
 App.isOpen = false;
 App.isGenerated = false
 
+// Function to update the scrollable content height
+function updateScrollableContentHeight() {
+	var containerHeight = $('#right-frame').height();
+	console.log(containerHeight);
+	var totalToolbarHeight = 0;
 
+	// Calculate the combined height of all toolbar elements
+	$("#right-frame > div:not([id='result-panel'])").each(function() {
+		totalToolbarHeight += $(this).outerHeight();
+		console.log($(this));
+	});
+
+	console.log(totalToolbarHeight);
+
+	var scrollableContentHeight = containerHeight - totalToolbarHeight;
+	
+	console.log(scrollableContentHeight);
+	console.log($('#right-frame > #result-panel'));
+	$('#right-frame > #result-panel').css('max-height', scrollableContentHeight + 'px');
+	}
+
+$(document).ready(function() {
+	// Initial call to set the height
+	updateScrollableContentHeight();
+  });
 
 App.click = function() {
 	if (!App.isOpen && !App.isGenerated) {
@@ -16,6 +40,7 @@ App.click = function() {
     } else if (!App.isOpen) {
         App.showTags();
         App.isOpen = true;
+		updateScrollableContentHeight();
     } else {
         App.hideTags();
         App.isOpen = false;
@@ -99,10 +124,15 @@ App.getTags = function(bookmark) {
 	$('#tags').html('');
 	$('#addTag').html('');
 
+	// function test() {
+	// 	console.log('Hello');
+	// }
+
 	chrome.bookmarks.getTree(function(itemTree){
 		itemTree.forEach(function(item){
 			App.processTag(item);
 		});
+		updateScrollableContentHeight();
 	});
 
     $(document.body).on('click', 'li a.label', function(e){
@@ -130,9 +160,12 @@ App.getTags = function(bookmark) {
 
 App.hideTags = function() {
     document.querySelector('.tags-wrap').style.display = "none";
+    document.querySelector('.tags-wrap').style.height = "0";
+	updateScrollableContentHeight()
 }
 
 App.showTags = function() {
     document.querySelector('.tags-wrap').style.display = "block";
+    document.querySelector('.tags-wrap').style.height = "auto";
 }
 
