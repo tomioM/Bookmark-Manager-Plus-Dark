@@ -7,12 +7,12 @@ App.isGenerated = false
 
 
 App.click = function() {
-    console.log(this.isOpen);
 	if (!App.isOpen && !App.isGenerated) {
         App.showTags();
         App.getTags();
         App.isOpen = true;
         App.isGenerated = true;
+
     } else if (!App.isOpen) {
         App.showTags();
         App.isOpen = true;
@@ -61,7 +61,7 @@ App.processTag = function(node) {
 		
 		var matchTags = App.matchTags(node.title);
 
-		for(var i=0; i < matchTags.length; i++) {
+		for(var i=1; i < matchTags.length; i++) {
 			if($('#tags a[data-tag="'+matchTags[i]+'"]').size()==0) {
 
 				// tags
@@ -105,13 +105,11 @@ App.getTags = function(bookmark) {
 		});
 	});
 
-    // $('li a.label').click(e => {
-    //     console.log('ello you!')
-    //     console.log($(e.currentTarget).data(tag));
-    // })
+	const searchInput = document.getElementById("search-editor");
+	searchInput.focus();
+
     $(document.body).on('click', 'li a.label', function(e){
-        const searchInput = document.getElementById("search-editor");
-            // Prevent the default behavior of the anchor element (e.g., following a link)
+        // Prevent the default behavior of the anchor element (e.g., following a link)
         e.preventDefault();
 
         // Access the data-tag attribute value
@@ -120,7 +118,12 @@ App.getTags = function(bookmark) {
         // Log the data-tag value to the console
         console.log("data-tag value:", dataTagValue);
 
-        searchInput.value += dataTagValue + ' ';
+		let searchString = searchInput.value.slice(0, searchInput.selectionStart) + searchInput.value.slice(searchInput.selectionEnd);
+		searchString = searchString.trim();
+        searchString = searchString + ' ' + dataTagValue;
+		searchInput.value = searchString.trim();
+
+		searchInput.focus();
 
         search(true);
 });

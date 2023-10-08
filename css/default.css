@@ -37,14 +37,15 @@
 	overflow: auto;
 	z-index: 15;
 	position: relative;
+	padding: 4px 6px;
 }
 
 .label {
     float: left;
-    padding: 4px;
-    color: #fff;
+    padding: 3px 6px;
+    color: var(--btn);
     border-radius: 4px;
-    margin: 0 5px 6px 0;
+    margin: 3px 5px 3px 0;
     font-weight: bold;
     text-decoration: none;
     background: #3d3d3d;
@@ -886,7 +887,7 @@ a > span {
 	display: inline-block;
 }
 
-.search-extend-trigger {
+.search-extend-btn {
 	display: inline-block;
 }
 

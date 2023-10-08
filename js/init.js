@@ -545,10 +545,14 @@ function init() {
 	// End of Visit Random Visible
 
 	// Start of ChromTag integration
-	const tagMenuBtn = document.querySelector('.tag-menu-btn');
-	// console.log(tagMenuBtn);
+	const tagMenuBtn = document.querySelector('#tag-menu-btn');
 	tagMenuBtn.addEventListener('click', App.click);
 
+	const clearSearchBtn = document.querySelector('#clear-search-btn');
+	clearSearchBtn.addEventListener('click', () => {
+		searchInput.value = '';
+		searchInput.focus();
+	});
 
 	$document = $(document);
 	$body = $('body');
