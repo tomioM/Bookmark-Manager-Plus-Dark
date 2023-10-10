@@ -25,39 +25,6 @@
 	--color-main: orange;
 }
 
-.tags-wrap {
-	cursor: default;
-	/* border: solid 1px var(--serperator); */
-	position: absolute;
-	/* background-color: #2d2e31ac; */
-	/* border-radius: var(--icon-radius); */
-	/* box-shadow: var(--popover-shadow); */
-	max-height: 400px;
-	overflow: auto;
-	position: relative;
-	padding: 2px 6px;
-}
-
-ul#tags > li:nth-child(1) {
-	display: none;
-}
-
-.label {
-    float: left;
-    padding: 3px 6px;
-    color: var(--btn);
-    border-radius: 4px;
-    margin: 3px 5px 3px 0;
-    font-weight: bold;
-    text-decoration: none;
-    background: #3d3d3d;
-}
-
-.label:hover {
-	color: var(--background-colour);
-	background-color: var(--item-hover-select-bg);
-}
-
 svg {
 	path {
 		fill: red;
@@ -98,13 +65,15 @@ body {
 	/* FWIDTH */
 	width: 420px;	/* 5 + 390 + 5 == 400 */
 	height: 590px;
-	margin: 5px 5px 0 5px;
+	margin: 5px 0 0 5px;
 	word-wrap: break-word;
 	user-select: none;
 	color: var(--text-colour) !important;
 	background-color: var(--background-colour);
 	/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
+
+
 body.extend {
 	width: 790px;	/* 5 + 790 + 5 == 800 */
 }
@@ -786,9 +755,11 @@ a > span {
 #right-frame {
 	height: 590px;
 	right: 5px;
+	margin-left: 5px;
 	/* FWIDTH, Also update 633, 641 in init.js; init 390*/
 	/* TODO: Tie this to one variable, preferably configured via dragging or ui accessible variable */
-    width: 420px;
+    width: 415px;
+	/* position: relative; */
 	/* z-index: 1; */
 }
 

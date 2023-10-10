@@ -644,10 +644,10 @@ function init() {
 		},
 		drag: function(e, ui) {
 			var width = $('#separator').outerWidth();
-			$leftFrame.css('width', ui.offset.left - getBodyHorizontalMargin()/2 - 2/*margin*/);
-			$rightFrame.css('width', getPopupWidth() - ui.offset.left - width + getBodyHorizontalMargin()/2 - 2/*margin*/);
+			$leftFrame.css('width', ui.offset.left - getBodyHorizontalMargin()/2 - 7);
+			$rightFrame.css('width', getPopupWidth() - ui.offset.left - width + getBodyHorizontalMargin()/2 - 7/*margin*/);
 			
-			bmp.rightFrameX = getPopupWidth() - ui.offset.left - width + getBodyHorizontalMargin()/2 - 2/*margin*/;
+			bmp.rightFrameX = getPopupWidth() - ui.offset.left - width + getBodyHorizontalMargin()/2 - 7/*margin*/;
 			
 			updateExploreHierarchyMaxWidth('#left-frame');
 			updateExploreHierarchyMaxWidth('#right-frame');
@@ -660,7 +660,40 @@ function init() {
 			
 			updateSearchEditorWidth();
 		},
-	})
+	});
+
+	const $resizeHandle = $('#resize-handle');
+	const $content = $('#right-frame');
+	let isResizing = false;
+  
+	$resizeHandle.mousedown(function(event) {
+	  isResizing = true;
+	  const originalX = event.clientX;
+	  const originalWidth = $content.width();
+
+  
+	  $(document).mousemove(function(event) {
+		if (isResizing) {
+			console.log(event.clientX)
+		  let width = originalWidth + (originalX - (event.clientX));
+		  width = Math.max(200, Math.min(width, 780));
+		  $content.width(width);
+
+		  
+		  updateExploreHierarchyMaxWidth('#right-frame');
+		  updateResultPanelHeight('#right-frame');
+		  updateGroupMaxWidth('#right-frame');
+		  updateSearchEditorWidth();
+
+		}
+	  });
+  
+	  $(document).mouseup(function() {
+		$body.width($content.width());
+		isResizing = false;
+	  });
+	});
+
 	
 	$('#modal-cover').on({
 		click: function(e) {
@@ -684,9 +717,14 @@ function init() {
 		if($(this).attr('id') == "append-view") {
 			
 			endOptionMenu();
+
+			// 2
+			$('#right-frame > #result-panel').css('max-height', 'none');
 			
 			bmp.isExtending = true;
 			
+			// Clear styles
+			$body.removeAttr('style');
 			$body.addClass('extend');
 			$rightFrame.animate({
 				width: bmp.rightFrameX,
@@ -698,6 +736,7 @@ function init() {
 					showView(bmp.exploreHierarchy.left.id);
 				}
 				
+				$('#resize-handle').hide()
 				$('#separator').show(250);
 				
 				updateExploreHierarchyMaxWidth('#left-frame');
@@ -711,6 +750,7 @@ function init() {
 				updateGroupMaxWidth('#right-frame');
 				updateGroupMaxWidth('#left-frame');
 
+				// 2
 				updateScrollableContentHeight();
 				
 				bmp.isExtending = false;
@@ -730,10 +770,11 @@ function init() {
 			$body.removeClass('extend');
 			$leftFrame.hide();
 			$('#separator').hide();
+			$('#resize-handle').show()
 			
 			// FWIDTH, See633 in default css
 			var width = $rightFrame.css('width');
-			$rightFrame.css('width', 420);
+			$rightFrame.css('width', 415);
 			updateExploreHierarchyMaxWidth('#right-frame');
 			$rightFrame.css('width', width);
 			
@@ -741,7 +782,7 @@ function init() {
 			updateResultPanelHeight('#right-frame');
 			
 			$rightFrame.animate({
-				width: 420,
+				width: 415,
 			}, 350,  "easeOutCubic", function() {
 				updateSearchEditorWidth();
 				
@@ -2902,7 +2943,7 @@ function init() {
 	});
 	
 	bmp.currFrame = '#right-frame';
-	bmp.rightFrameX = 500;
+	bmp.rightFrameX = 495;
 	
 	bmp.actionMenuToolsetMaxWidth = $('#action-menu-toolset').outerWidth();
 	bmp.actionMenuToolsetMinWidth = $('#action-menu-toolset').outerWidth() - $('.advanced-search-icon-toolbars').outerWidth();
