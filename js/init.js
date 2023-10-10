@@ -689,7 +689,7 @@ function init() {
 	  });
   
 	  $(document).mouseup(function() {
-		$body.width($content.width());
+		$body.width($content.width() + getBodyHorizontalMargin());
 		isResizing = false;
 	  });
 	});

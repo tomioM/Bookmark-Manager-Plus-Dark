@@ -65,7 +65,7 @@ body {
 	/* FWIDTH */
 	width: 420px;	/* 5 + 390 + 5 == 400 */
 	height: 590px;
-	margin: 5px 0 0 5px;
+	margin: 5px 5px 0 0;
 	word-wrap: break-word;
 	user-select: none;
 	color: var(--text-colour) !important;
