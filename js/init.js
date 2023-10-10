@@ -676,7 +676,7 @@ function init() {
 		if (isResizing) {
 			console.log(event.clientX)
 		  let width = originalWidth + (originalX - (event.clientX));
-		  width = Math.max(200, Math.min(width, 780));
+		  width = Math.max(200, Math.min(width, 790));
 		  $content.width(width);
 
 		  
@@ -2353,10 +2353,11 @@ function init() {
 	$('.search-extend-trigger').on('click', function() {
 		if($(this).find('span').hasClass('fa-plus')) {
 			if($body.hasClass('extend')) {
-				$searchEditor.css('width', bmp.rightFrameX - 100);
+				$searchEditor.css('width', bmp.rightFrameX - 143);
 				//console.error('max-width ' + (bmp.rightFrameX - 80));
 			} else {
-				$searchEditor.css('width', 290);
+				console.log($rightFrame.width());
+				$searchEditor.css('width', $rightFrame.width() - 143);
 			}
 			
 			$('#icon-set').finish();

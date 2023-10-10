@@ -1381,9 +1381,9 @@ function updateSearchEditorWidth() {
 	
 	if($('.search-extend-trigger').find('span').hasClass('fa-minus')) {
 		if($body.hasClass('extend')) {
-			$searchEditor.css('width', bmp.rightFrameX - 100);
+			$searchEditor.css('width', bmp.rightFrameX - 143);
 		} else {
-			$searchEditor.css('width', 290);
+			$searchEditor.css('width', $rightFrame.width() - 143);
 		}
 	} else {
 		
