@@ -689,6 +689,7 @@ function init() {
 	  });
   
 	  $(document).mouseup(function() {
+		// I wish the body could resize as the user drags the handle, but this causes a feedback loop due to the x position of the handle being effected by the body width
 		$body.width($content.width() + getBodyHorizontalMargin());
 		isResizing = false;
 	  });
