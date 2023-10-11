@@ -670,6 +670,9 @@ function init() {
 	let originalX;
 	let originalWidth;
 
+	// SCALE BODY WIDTH TO FULL TO ALLOW PREVIEW:
+	// $(document).on('mousedown', $resizeHandle, () => {$body.width(795);})
+
 	$resizeHandle.draggable({
 		axis: "x",
 		cursor: "w-resize",
@@ -677,22 +680,21 @@ function init() {
 		revertDuration: 0,
 		start: function(event, ui) {
 			isResizing = true;
-			originalX = event.clientX;
 			originalWidth = $content.width();
+			// SCALE BODY WIDTH TO FULL TO ALLOW PREVIEW: Add expression "+ (795 - originalWidth)""
+			originalX = event.clientX;
 		},
 		drag: function(event, ui) {
 			if (isResizing) {
-				console.log(event.clientX)
-			  let width = originalWidth + (originalX - (event.clientX));
-			  width = Math.max(200, Math.min(width, 790));
-			  $content.width(width);
-	
-			  
-			  updateExploreHierarchyMaxWidth('#right-frame');
-			  updateResultPanelHeight('#right-frame');
-			  updateGroupMaxWidth('#right-frame');
-			  updateSearchEditorWidth();
-			  updateScrollableContentHeight()
+				let width = originalWidth + (originalX - (event.clientX));
+				width = Math.max(200, Math.min(width, 790));
+				$content.width(width);
+		
+				updateExploreHierarchyMaxWidth('#right-frame');
+				updateResultPanelHeight('#right-frame');
+				updateGroupMaxWidth('#right-frame');
+				updateSearchEditorWidth();
+				updateScrollableContentHeight()
 			}
 		},
 		stop: function(event, ui) {
