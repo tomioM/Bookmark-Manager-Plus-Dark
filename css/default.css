@@ -75,7 +75,7 @@ body {
 
 
 body.extend {
-	width: 790px;	/* 5 + 790 + 5 == 800 */
+	width: 795px;	/* 5 + 790 + 5 == 800 */
 }
 
 button img {
