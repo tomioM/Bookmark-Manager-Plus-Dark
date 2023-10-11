@@ -669,6 +669,7 @@ function init() {
 	let isResizing = false;
 	let originalX;
 	let originalWidth;
+	let wholeWidth;
 
 	// SCALE BODY WIDTH TO FULL TO ALLOW PREVIEW:
 	// $(document).on('mousedown', $resizeHandle, () => {$body.width(795);})
@@ -678,6 +679,7 @@ function init() {
 		cursor: "w-resize",
 		revert: true,
 		revertDuration: 0,
+		grid: [60, 60],
 		start: function(event, ui) {
 			isResizing = true;
 			originalWidth = $content.width();
@@ -686,10 +688,15 @@ function init() {
 		},
 		drag: function(event, ui) {
 			if (isResizing) {
-				let width = originalWidth + (originalX - (event.clientX));
+				let bodyWidth = $body.width();
+				let width = originalWidth + ((originalX + (bodyWidth - originalWidth)) - event.clientX);
 				width = Math.max(200, Math.min(width, 790));
+				
+				$body.width(width + getBodyHorizontalMargin());
+				console.log(width)
+				
 				$content.width(width);
-		
+
 				updateExploreHierarchyMaxWidth('#right-frame');
 				updateResultPanelHeight('#right-frame');
 				updateGroupMaxWidth('#right-frame');
