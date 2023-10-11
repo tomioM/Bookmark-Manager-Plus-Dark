@@ -662,38 +662,81 @@ function init() {
 		},
 	});
 
+
+
 	const $resizeHandle = $('#resize-handle');
 	const $content = $('#right-frame');
 	let isResizing = false;
+	let originalX;
+	let originalWidth;
+
+	$resizeHandle.draggable({
+		axis: "x",
+		cursor: "w-resize",
+		revert: true,
+		revertDuration: 0,
+		start: function(event, ui) {
+			isResizing = true;
+			originalX = event.clientX;
+			originalWidth = $content.width();
+		},
+		drag: function(event, ui) {
+			if (isResizing) {
+				console.log(event.clientX)
+			  let width = originalWidth + (originalX - (event.clientX));
+			  width = Math.max(200, Math.min(width, 790));
+			  $content.width(width);
+	
+			  
+			  updateExploreHierarchyMaxWidth('#right-frame');
+			  updateResultPanelHeight('#right-frame');
+			  updateGroupMaxWidth('#right-frame');
+			  updateSearchEditorWidth();
+			  updateScrollableContentHeight()
+			}
+		},
+		stop: function(event, ui) {
+			// I wish the body could resize as the user drags the handle, but this causes a feedback loop due to the x position of the handle being effected by the body width
+			$body.width($content.width() + getBodyHorizontalMargin());
+			isResizing = false;
+		}
+	})
   
-	$resizeHandle.mousedown(function(event) {
-	  isResizing = true;
-	  const originalX = event.clientX;
-	  const originalWidth = $content.width();
+	// $resizeHandle.mousedown(function(event) {
+	// 	isResizing = true;
+	// 	const originalX = event.clientX;
+	// 	const originalWidth = $content.width();
+	// });
+
+	// $resizeHandle.mousedown(function(event) {
+	//   isResizing = true;
+	//   const originalX = event.clientX;
+	//   const originalWidth = $content.width();
 
   
-	  $(document).mousemove(function(event) {
-		if (isResizing) {
-			console.log(event.clientX)
-		  let width = originalWidth + (originalX - (event.clientX));
-		  width = Math.max(200, Math.min(width, 790));
-		  $content.width(width);
+	//   $(document).mousemove(function(event) {
+	// 	if (isResizing) {
+	// 		console.log(event.clientX)
+	// 	  let width = originalWidth + (originalX - (event.clientX));
+	// 	  width = Math.max(200, Math.min(width, 790));
+	// 	  $content.width(width);
 
 		  
-		  updateExploreHierarchyMaxWidth('#right-frame');
-		  updateResultPanelHeight('#right-frame');
-		  updateGroupMaxWidth('#right-frame');
-		  updateSearchEditorWidth();
+	// 	  updateExploreHierarchyMaxWidth('#right-frame');
+	// 	  updateResultPanelHeight('#right-frame');
+	// 	  updateGroupMaxWidth('#right-frame');
+	// 	  updateSearchEditorWidth();
+	// 	  updateScrollableContentHeight()
 
-		}
-	  });
+	// 	}
+	//   });
   
-	  $(document).mouseup(function() {
-		// I wish the body could resize as the user drags the handle, but this causes a feedback loop due to the x position of the handle being effected by the body width
-		$body.width($content.width() + getBodyHorizontalMargin());
-		isResizing = false;
-	  });
-	});
+	//   $(document).mouseup(function() {
+	// 	// I wish the body could resize as the user drags the handle, but this causes a feedback loop due to the x position of the handle being effected by the body width
+	// 	$body.width($content.width() + getBodyHorizontalMargin());
+	// 	isResizing = false;
+	//   });
+	// });
 
 	
 	$('#modal-cover').on({
