@@ -666,12 +666,7 @@ function init() {
 
 	const $resizeHandle = $('#resize-handle');
 	const $content = $('#right-frame');
-	let isResizing = false;
-	let originalX;
-	let originalWidth;
-
-	// SCALE BODY WIDTH TO FULL TO ALLOW PREVIEW:
-	// $(document).on('mousedown', $resizeHandle, () => {$body.width(795);})
+	let oldBodyWidth;
 
 	$resizeHandle.draggable({
 		axis: "x",
@@ -680,32 +675,25 @@ function init() {
 		revertDuration: 0,
 		distance: 20,
 		start: function(event, ui) {
-			isResizing = true;
-			originalWidth = $content.width();
-			// SCALE BODY WIDTH TO FULL TO ALLOW PREVIEW: Add expression "+ (795 - originalWidth)""
-			originalX = event.clientX;
+			oldBodyWidth = $body.width();
 		},
 		drag: function(event, ui) {
-			if (isResizing) {
-				const width = originalWidth + ((originalX + ($body.width() - originalWidth)) - event.clientX);
-				const adjustedWidth = Math.max(200, Math.min(width, 790));
-				
-				$body.width(adjustedWidth + getBodyHorizontalMargin());
-				console.log(adjustedWidth)
-				
-				$content.width(adjustedWidth);
+			const width = oldBodyWidth - event.clientX;
+			const adjustedWidth = Math.max(250, Math.min(width, 795));
+			
+			$body.width(adjustedWidth);
+			$content.width(adjustedWidth - getBodyHorizontalMargin());
 
-				updateExploreHierarchyMaxWidth('#right-frame');
-				updateResultPanelHeight('#right-frame');
-				updateGroupMaxWidth('#right-frame');
-				updateSearchEditorWidth();
-				updateScrollableContentHeight()
-			}
+			oldBodyWidth = adjustedWidth;
+
+			updateExploreHierarchyMaxWidth('#right-frame');
+			updateResultPanelHeight('#right-frame');
+			updateGroupMaxWidth('#right-frame');
+			updateSearchEditorWidth();
+			updateScrollableContentHeight()
 		},
 		stop: function(event, ui) {
-			// I wish the body could resize as the user drags the handle, but this causes a feedback loop due to the x position of the handle being effected by the body width
 			$body.width($content.width() + getBodyHorizontalMargin());
-			isResizing = false;
 		}
 	})
   
