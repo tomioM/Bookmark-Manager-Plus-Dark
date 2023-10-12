@@ -673,7 +673,6 @@ function init() {
 		cursor: "w-resize",
 		revert: true,
 		revertDuration: 0,
-		distance: 20,
 		start: function(event, ui) {
 			originalBodyWidth = $body.width();
 			originalScreenX = event.screenX
