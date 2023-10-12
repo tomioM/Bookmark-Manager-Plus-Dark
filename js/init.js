@@ -662,11 +662,11 @@ function init() {
 		},
 	});
 
-
-
+	// Resize the popup by dragging the left edge.
 	const $resizeHandle = $('#resize-handle');
 	const $content = $('#right-frame');
-	let oldBodyWidth;
+	let originalScreenX
+	let originalBodyWidth;
 
 	$resizeHandle.draggable({
 		axis: "x",
@@ -675,25 +675,21 @@ function init() {
 		revertDuration: 0,
 		distance: 20,
 		start: function(event, ui) {
-			oldBodyWidth = $body.width();
+			originalBodyWidth = $body.width();
+			originalScreenX = event.screenX
 		},
 		drag: function(event, ui) {
-			const width = oldBodyWidth - event.clientX;
+			const width = originalBodyWidth + (originalScreenX - event.screenX);
 			const adjustedWidth = Math.max(250, Math.min(width, 795));
 			
 			$body.width(adjustedWidth);
 			$content.width(adjustedWidth - getBodyHorizontalMargin());
-
-			oldBodyWidth = adjustedWidth;
 
 			updateExploreHierarchyMaxWidth('#right-frame');
 			updateResultPanelHeight('#right-frame');
 			updateGroupMaxWidth('#right-frame');
 			updateSearchEditorWidth();
 			updateScrollableContentHeight()
-		},
-		stop: function(event, ui) {
-			$body.width($content.width() + getBodyHorizontalMargin());
 		}
 	})
   
