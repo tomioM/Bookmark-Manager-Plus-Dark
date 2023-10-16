@@ -770,7 +770,7 @@ a > span {
 	left: 289px;
 	/* margin: 5px 0; */
 	height: 590px;
-    width: 3px;
+    width: 4px;
 	background: var(--input);
     vertical-align: top;
 	z-index: 5;
