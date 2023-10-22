@@ -938,6 +938,8 @@ function preview(parameter) {
 // target
 function explore(parameter) {
 
+	document.querySelectorAll('#explore-panel')[1].classList.remove('explore-panel--search-mode');
+
 	// * Clears the search cache, indicating that the most recent screen was not explore
 	StorageManager.set({
 		searchCache: "",
@@ -1131,6 +1133,8 @@ function explore(parameter) {
 
 function search(isManual) {
 	
+	document.querySelectorAll('#explore-panel')[1].classList.add('explore-panel--search-mode');
+
 	console.warn("search");
 	
 	if(_search(isManual) == "skipHistory") return;

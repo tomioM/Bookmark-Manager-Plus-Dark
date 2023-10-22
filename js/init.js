@@ -504,7 +504,6 @@ function init() {
 
 
 	searchInput.addEventListener('keydown', (e) => {
-		console.log('hi');
 		if (e.ctrlKey && e.key == 'i') {
 			searchInput.value = searchInput.value + '⭐';
 		}

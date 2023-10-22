@@ -97,6 +97,10 @@ input::-webkit-search-cancel-button {
 }
 
 
+#explore-panel.explore-panel--search-mode {
+	opacity: 50%;
+}
+
 #about-shortcut-list > ul {
 	/* color: var(--link-colour); */
 	opacity: 75%;
