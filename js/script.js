@@ -1133,8 +1133,6 @@ function explore(parameter) {
 
 function search(isManual) {
 	
-	document.querySelectorAll('#explore-panel')[1].classList.add('explore-panel--search-mode');
-
 	console.warn("search");
 	
 	if(_search(isManual) == "skipHistory") return;
@@ -1490,4 +1488,6 @@ function _search(isManual) {
 	$rightFrame.find('#explore-panel span').removeClass('explore-view');
 	
 	$('#current-mode').text("Search");
+
+	document.querySelectorAll('#explore-panel')[1].classList.add('explore-panel--search-mode');
 }
