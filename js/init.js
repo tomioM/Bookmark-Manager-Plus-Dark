@@ -502,6 +502,14 @@ function init() {
 	const otherInputs = document.querySelectorAll('input[type="text"]:not(#searchInput)');
 	let isInputFocused = false;
 
+
+	searchInput.addEventListener('keydown', (e) => {
+		console.log('hi');
+		if (e.ctrlKey && e.key == 'i') {
+			searchInput.value = searchInput.value + '⭐';
+		}
+	});
+
 	// Add a focus event listener to track when the input is focused
 	searchInput.addEventListener("focus", () => {
 		isInputFocused = true;
@@ -565,7 +573,7 @@ function init() {
 	
 	$contextMenu = $('#context-menu');
 	$optionMenu = $('#option-menu');
-	
+
 	// register refreshTree listeners
 	chrome.bookmarks.onCreated.addListener(refreshTree);
 	chrome.bookmarks.onRemoved.addListener(refreshTree);
