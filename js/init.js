@@ -505,7 +505,7 @@ function init() {
 
 	searchInput.addEventListener('keydown', (e) => {
 		if (e.ctrlKey && e.key == 'i') {
-			searchInput.value = searchInput.value + '⭐';
+			searchInput.value = searchInput.value + '★';
 		}
 	});
 
